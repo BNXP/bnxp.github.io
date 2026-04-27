@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>تشخيص مجاني — د. سارة | 60 ثانية لمعرفة سبب مشكلتك</title>
+<meta name="description" content="تشخيص مجاني عبر 7 أسئلة سريعة لتحديد سبب سرعة القذف أو ضعف الانتصاب أو صغر الحجم — مع د. سارة جونسون، خبيرة صحة الرجل من نظام جونز هوبكنز."/>
+<link rel="canonical" href="https://drsarah-clinic.com/quiz/"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+/* ===== Quiz Page Styles ===== */
+:root {
+  --primary: #0e6149; --primary-light: #1a8a6a; --primary-dark: #074734;
+  --secondary: #c9a96e; --secondary-light: #e6cd9a; --secondary-dark: #8a6f3e;
+  --bg-primary: #fdfbf6; --bg-secondary: #f5efe1; --text-primary: #1f2d28;
+  --text-secondary: #4a5a54; --text-muted: #7a8a84; --border-light: #e2dccc;
+  --shadow-sm: 0 1px 2px rgba(10,42,34,0.06);
+  --shadow-md: 0 4px 10px -2px rgba(10,42,34,0.10);
+  --shadow-lg: 0 14px 30px -6px rgba(10,42,34,0.14);
+  --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px; --radius-full: 9999px;
+  --font-sans: 'Cairo','Noto Sans Arabic',sans-serif;
+  --font-quran: 'Amiri','Noto Sans Arabic',serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans); color: var(--text-primary);
+  background: var(--bg-primary); line-height: 1.7; -webkit-font-smoothing: antialiased;
+}
+.container { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Header */
+.quiz-header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff; padding: 1.5rem 0; text-align: center; position: relative;
+}
+.quiz-header h1 { font-size: 1.35rem; font-weight: 700; margin-bottom: 4px; }
+.quiz-header p { font-size: 0.85rem; opacity: 0.85; }
+.quiz-header .back-link {
+  position: absolute; top: 50%; right: 1.5rem; transform: translateY(-50%);
+  color: #fff; font-size: 0.85rem; opacity: 0.8; display: flex; align-items: center; gap: 6px;
+}
+.quiz-header .back-link:hover { opacity: 1; }
+
+/* Progress */
+.progress-bar {
+  height: 4px; background: var(--border-light); margin: 0 auto;
+  max-width: 800px; border-radius: 2px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary));
+  width: 0%; transition: width 0.5s ease;
+}
+.progress-text {
+  text-align: center; font-size: 0.8rem; color: var(--text-muted);
+  margin-top: 6px; margin-bottom: 2rem;
+}
+
+/* Quiz Card */
+.quiz-card {
+  background: #fff; border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg); padding: 2rem 2.5rem;
+  box-shadow: var(--shadow-md); margin-bottom: 2rem;
+  min-height: 420px; display: flex; flex-direction: column;
+}
+.step-title {
+  font-size: 1.15rem; font-weight: 700; color: var(--primary);
+  margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px;
+}
+.step-title .step-num {
+  width: 32px; height: 32px; background: var(--primary); color: #fff;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; font-weight: 700; flex-shrink: 0;
+}
+.step-question { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.5; }
+.step-sub { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+/* Options */
+.options-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+.option-btn {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1rem 1.25rem; background: var(--bg-primary);
+  border: 2px solid var(--border-light); border-radius: var(--radius-md);
+  cursor: pointer; font-family: inherit; font-size: 1rem; color: var(--text-primary);
+  text-align: right; transition: all 0.2s ease; width: 100%;
+}
+.option-btn:hover {
+  border-color: var(--primary-light); background: rgba(14,97,73,0.03);
+  transform: translateX(-4px);
+}
+.option-btn.selected {
+  border-color: var(--primary); background: rgba(14,97,73,0.06);
+}
+.option-btn .opt-letter {
+  width: 28px; height: 28px; border: 2px solid var(--border-light);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700; color: var(--text-muted); flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.option-btn.selected .opt-letter { background: var(--primary); color: #fff; border-color: var(--primary); }
+.option-btn .opt-text { flex: 1; }
+
+/* Nav Buttons */
+.nav-btns {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: auto; padding-top: 1.5rem; gap: 1rem;
+}
+.btn {
+  padding: 12px 28px; border-radius: var(--radius-full); font-family: inherit;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer; border: none;
+  transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-secondary { background: transparent; color: var(--text-muted); border: 1px solid var(--border-light); }
+.btn-secondary:hover { background: var(--bg-secondary); }
+
+/* Result Page */
+.result-card { text-align: center; padding: 3rem 2rem; }
+.result-icon { font-size: 4rem; margin-bottom: 1rem; }
+.result-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-primary); }
+.result-subtitle { font-size: 1rem; color: var(--text-secondary); margin-bottom: 2rem; }
+
+.diagnosis-box {
+  background: linear-gradient(135deg, rgba(14,97,73,0.04), rgba(201,169,110,0.06));
+  border: 1px solid var(--border-light); border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem; text-align: right; margin-bottom: 2rem;
+  border-right: 4px solid var(--primary);
+}
+.diagnosis-box h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 0.75rem; }
+.diagnosis-box p { font-size: 0.97rem; color: var(--text-secondary); line-height: 1.8; }
+.diagnosis-box ul { padding-right: 1.2rem; }
+.diagnosis-box li { font-size: 0.95rem; color: var(--text-secondary); padding: 4px 0; }
+
+.recommendation {
+  background: #fff; border: 2px solid var(--secondary);
+  border-radius: var(--radius-lg); padding: 1.5rem;
+  margin-bottom: 2rem; text-align: right;
+}
+.recommendation h4 { color: var(--secondary-dark); font-size: 1rem; margin-bottom: 0.5rem; }
+.recommendation p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+
+.messenger-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, #0084FF, #0066CC); color: #fff;
+  padding: 16px 32px; border-radius: var(--radius-full); font-size: 1.05rem;
+  font-weight: 700; text-decoration: none; box-shadow: 0 8px 24px rgba(0,102,204,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease; margin-bottom: 1rem;
+}
+.messenger-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,102,204,0.4); }
+.messenger-cta svg { width: 24px; height: 24px; }
+
+.privacy-note {
+  font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center;
+  justify-content: center; gap: 6px; margin-top: 1rem;
+}
+
+/* Footer */
+.quiz-footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: var(--text-muted); }
+.quiz-footer a { color: var(--primary); }
+
+/* Animations */
+.fade-in { animation: fadeIn 0.4s ease both; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 640px) {
+  .quiz-card { padding: 1.5rem; min-height: auto; }
+  .step-question { font-size: 1.1rem; }
+  .option-btn { padding: 0.875rem 1rem; font-size: 0.95rem; }
+  .result-title { font-size: 1.25rem; }
+  .messenger-cta { padding: 14px 24px; font-size: 0.95rem; }
+  .quiz-header h1 { font-size: 1.1rem; }
+  .quiz-header .back-link { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="quiz-header">
+  <a href="../index.html" class="back-link">← العودة للموقع</a>
+  <h1>تشخيص مجاني مع د. سارة</h1>
+  <p>7 أسئلة سريعة · 100% سرية · النتيجة فورية</p>
+</header>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<p class="progress-text" id="progressText">الخطوة 1 من 7</p>
+
+<main class="container">
+  <div class="quiz-card" id="quizCard">
+    <!-- Steps injected by JS -->
+  </div>
+</main>
+
+<footer class="quiz-footer">
+  <p>© 2026 د. سارة جونسون · <a href="../index.html">الموقع الرئيسي</a> · سرية تامة</p>
+</footer>
+
+<script>
+const steps = [
+  {
+    id: 'condition',
+    title: 'المشكلة الرئيسية',
+    question: 'ما المشكلة التي تؤثر على حياتك الجنسية حالياً؟',
+    subtitle: 'يمكنك اختيار أكثر من واحدة، لكن دعنا نبدأ بالأهم.',
+    multi: true,
+    options: [
+      { value: 'pe', label: 'سرعة القذف — أنتهي بسرعة جداً' },
+      { value: 'ed', label: 'ضعف الانتصاب — الانتصاب لا يكتمل أو لا يستمر' },
+      { value: 'size', label: 'صغر الحجم — أشعر أن حجمي غير كافٍ' },
+      { value: 'all', label: 'أعاني من المشاكل الثلاث معاً' },
+    ]
+  },
+  {
+    id: 'age',
+    title: 'العمر',
+    question: 'كم عمرك حالياً؟',
+    subtitle: 'العمر يساعدنا في فهم وضعك الهرموني بشكل أفضل.',
+    options: [
+      { value: '18-25', label: '18 — 25 سنة' },
+      { value: '26-35', label: '26 — 35 سنة' },
+      { value: '36-45', label: '36 — 45 سنة' },
+      { value: '46-55', label: '46 — 55 سنة' },
+      { value: '55+', label: 'أكثر من 55 سنة' },
+    ]
+  },
+  {
+    id: 'symptom_detail',
+    title: 'تفاصيل الحالة',
+    question: '', // dynamic based on condition
+    subtitle: '',
+    dynamic: true
+  },
+  {
+    id: 'health',
+    title: 'الحالة الصحية',
+    question: 'هل تعاني من أي من الحالات الصحية التالية؟',
+    subtitle: 'هذا مهم جداً — لأن بعض الأمراض تؤثر مباشرة على الأداء الجنسي.',
+    multi: true,
+    options: [
+      { value: 'diabetes', label: 'مرض السكري' },
+      { value: 'prostate', label: 'أمراض البروستاتا' },
+      { value: 'pressure', label: 'ارتفاع ضغط الدم' },
+      { value: 'depression', label: 'اكتئاب أو قلق مزمن' },
+      { value: 'none', label: 'لا أعاني من أي منها' },
+    ]
+  },
+  {
+    id: 'habits',
+    title: 'العادات',
+    question: 'هل تمارس الاستمناء بشكل متكرر؟',
+    subtitle: 'نعرف أن السؤال شخصي — لكنه أساسي لتشخيص السبب الحقيقي.',
+    options: [
+      { value: 'daily', label: 'نعم، بشكل يومي أو شبه يومي' },
+      { value: 'weekly', label: 'نعم، بضع مرات في الأسبوع' },
+      { value: 'rarely', label: 'نادراً جداً' },
+      { value: 'never', label: 'لا أمارسه أبداً' },
+    ]
+  },
+  {
+    id: 'lifestyle',
+    title: 'نمط الحياة',
+    question: 'كيف تصف نمط حياتك الحالي؟',
+    subtitle: 'اختر ما ينطبق عليك بشكل أكبر.',
+    multi: true,
+    options: [
+      { value: 'stress', label: 'ضغط نفسي / عملي مرتفع' },
+      { value: 'sleep', label: 'قلة النوم أو اضطرابات النوم' },
+      { value: 'sedentary', label: 'قلة الحركة / لا أمارس رياضة' },
+      { value: 'smoke', label: 'أدخن أو أتناول الكحول' },
+      { value: 'healthy', label: 'نمط حياة صحي بشكل عام' },
+    ]
+  },
+  {
+    id: 'goal',
+    title: 'الهدف',
+    question: 'ما هو الهدف الأهم بالنسبة لك؟',
+    subtitle: 'سنركّز علاجنا على الأولوية التي تختارها.',
+    options: [
+      { value: 'duration', label: 'زيادة مدة الجماع (30+ دقيقة)' },
+      { value: 'hardness', label: 'انتصاب أقوى وأكثر صلابة' },
+      { value: 'size', label: 'زيادة الحجم والطول' },
+      { value: 'confidence', label: 'استعادة الثقة بشكل عام' },
+      { value: 'all', label: 'كل ما سبق — أريد حلاً شاملاً' },
+    ]
+  }
+];
+
+let currentStep = 0;
+const answers = {};
+
+function getSymptomStep() {
+  const cond = answers.condition || [];
+  const hasPE = cond.includes('pe') || cond.includes('all');
+  const hasED = cond.includes('ed') || cond.includes('all');
+  const hasSize = cond.includes('size') || cond.includes('all');
+
+  if (hasPE) {
+    return {
+      question: 'باستثناء التقبيل واللمس — كم تستمر مدة الجماع حالياً؟',
+      subtitle: 'الوقت الفعلي للإيلاج حتى القذف.',
+      options: [
+        { value: 'under1', label: 'أقل من دقيقة' },
+        { value: '1-3', label: '1 — 3 دقائق' },
+        { value: '3-5', label: '3 — 5 دقائق' },
+        { value: '5-10', label: '5 — 10 دقائق' },
+        { value: 'over10', label: 'أكثر من 10 دقائق' },
+      ]
+    };
+  } else if (hasED) {
+    return {
+      question: 'كيف تصف حالة انتصابك الحالية؟',
+      subtitle: 'اختر الوصف الأقرب لحالتك.',
+      options: [
+        { value: 'none', label: 'لا يحدث انتصاب تقريباً' },
+        { value: 'weak', label: 'انتصاب ضعيف — لا يكمل العلاقة' },
+        { value: 'unstable', label: 'انتصاب متقطع — يضعف أثناء الجماع' },
+        { value: 'morning_only', label: 'انتصاب صباحي فقط' },
+        { value: 'ok', label: 'الانتصاب موجود لكن ليس كما كنت أتمنى' },
+      ]
+    };
+  } else if (hasSize) {
+    return {
+      question: 'ما طول قضيبك عند الانتصاب حالياً (بالبوصة تقريباً)؟',
+      subtitle: 'هذا سري تماماً — لن تشارك هذه المعلومة مع أي شخص.',
+      options: [
+        { value: 'under4', label: 'أقل من 4 بوصات (10 سم)' },
+        { value: '4-5', label: '4 — 5 بوصات (10 — 13 سم)' },
+        { value: '5-6', label: '5 — 6 بوصات (13 — 15 سم)' },
+        { value: '6-7', label: '6 — 7 بوصات (15 — 18 سم)' },
+        { value: 'over7', label: 'أكثر من 7 بوصات (18 سم+)' },
+      ]
+    };
+  }
+  return {
+    question: 'كم تستمر مدة الجماع حالياً؟',
+    subtitle: '',
+    options: [
+      { value: 'under1', label: 'أقل من دقيقة' },
+      { value: '1-3', label: '1 — 3 دقائق' },
+      { value: '3-5', label: '3 — 5 دقائق' },
+      { value: '5-10', label: '5 — 10 دقائق' },
+      { value: 'over10', label: 'أكثر من 10 دقائق' },
+    ]
+  };
+}
+
+function renderStep() {
+  const card = document.getElementById('quizCard');
+  const progress = ((currentStep) / steps.length) * 100;
+  document.getElementById('progressFill').style.width = progress + '%';
+  document.getElementById('progressText').textContent = `الخطوة ${currentStep + 1} من ${steps.length}`;
+
+  if (currentStep >= steps.length) {
+    renderResult();
+    return;
+  }
+
+  let step = steps[currentStep];
+  if (step.dynamic) {
+    const dyn = getSymptomStep();
+    step = { ...step, question: dyn.question, subtitle: dyn.subtitle, options: dyn.options };
+  }
+
+  const saved = answers[step.id] || [];
+  const isMulti = step.multi;
+
+  let html = `
+    <div class="fade-in">
+      <div class="step-title"><span class="step-num">${currentStep + 1}</span>${step.title}</div>
+      <div class="step-question">${step.question}</div>
+      ${step.subtitle ? `<p class="step-sub">${step.subtitle}</p>` : ''}
+      <div class="options-grid">
+  `;
+
+  step.options.forEach((opt, i) => {
+    const letter = String.fromCharCode(0x0623 + i); // Arabic letters
+    const selected = saved.includes(opt.value) ? 'selected' : '';
+    html += `
+      <button class="option-btn ${selected}" data-value="${opt.value}" onclick="selectOption('${step.id}', '${opt.value}', ${isMulti})">
+        <span class="opt-letter">${letter}</span>
+        <span class="opt-text">${opt.label}</span>
+      </button>
+    `;
+  });
+
+  html += `</div><div class="nav-btns">`;
+
+  if (currentStep > 0) {
+    html += `<button class="btn btn-secondary" onclick="prevStep()">← السابق</button>`;
+  } else {
+    html += `<span></span>`;
+  }
+
+  const hasAnswer = saved.length > 0;
+  html += `<button class="btn btn-primary" id="nextBtn" ${hasAnswer ? '' : 'disabled'} onclick="nextStep()">التالي →</button>`;
+
+  html += `</div></div>`;
+  card.innerHTML = html;
+}
+
+function selectOption(stepId, value, isMulti) {
+  const btns = document.querySelectorAll('.option-btn');
+  if (!isMulti) {
+    btns.forEach(b => b.classList.remove('selected'));
+    answers[stepId] = [value];
+  } else {
+    let arr = answers[stepId] || [];
+    if (value === 'none' || value === 'healthy') {
+      // If selecting "none", clear others
+      btns.forEach(b => b.classList.remove('selected'));
+      arr = [value];
+    } else {
+      // If selecting something else, remove "none"
+      arr = arr.filter(v => v !== 'none' && v !== 'healthy');
+      if (arr.includes(value)) {
+        arr = arr.filter(v => v !== value);
+      } else {
+        arr.push(value);
+      }
+    }
+    answers[stepId] = arr;
+  }
+
+  // Re-render selected states
+  btns.forEach(btn => {
+    const val = btn.dataset.value;
+    const arr = answers[stepId] || [];
+    if (arr.includes(val)) btn.classList.add('selected');
+    else btn.classList.remove('selected');
+  });
+
+  document.getElementById('nextBtn').disabled = (answers[stepId] || []).length === 0;
+}
+
+function nextStep() {
+  currentStep++;
+  renderStep();
+}
+
+function prevStep() {
+  currentStep--;
+  renderStep();
+}
+
+function renderResult() {
+  const card = document.getElementById('quizCard');
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressText').textContent = 'اكتمل التشخيص';
+
+  const cond = answers.condition || [];
+  const hasPE = cond.includes('pe') || cond.includes('all');
+  const hasED = cond.includes('ed') || cond.includes('all');
+  const hasSize = cond.includes('size') || cond.includes('all');
+  const health = answers.health || [];
+  const habits = answers.habits || [];
+  const lifestyle = answers.lifestyle || [];
+  const symptom = answers.symptom_detail || [];
+  const age = answers.age?.[0] || '';
+
+  // Determine primary condition and severity
+  let diagnosisTitle = '';
+  let severity = '';
+  let severityLevel = 0; // 1=mild, 2=moderate, 3=severe
+  let causes = [];
+  let mechanisms = [];
+  let risks = [];
+  let treatmentPhases = [];
+  let recPackage = '';
+  let packageDuration = '';
+
+  if (hasPE && !hasED && !hasSize) {
+    diagnosisTitle = 'تشخيص: سرعة القذف (Premature Ejaculation)';
+    const dur = symptom[0] || '';
+    if (dur === 'under1') { severity = 'حادة'; severityLevel = 3; }
+    else if (dur === '1-3') { severity = 'متوسطة إلى حادة'; severityLevel = 2; }
+    else if (dur === '3-5') { severity = 'متوسطة'; severityLevel = 2; }
+    else { severity = 'خفيفة'; severityLevel = 1; }
+  } else if (hasED && !hasPE && !hasSize) {
+    diagnosisTitle = 'تشخيص: ضعف الانتصاب (Erectile Dysfunction)';
+    const edState = symptom[0] || '';
+    if (edState === 'none' || edState === 'weak') { severity = 'حادة'; severityLevel = 3; }
+    else if (edState === 'unstable') { severity = 'متوسطة إلى حادة'; severityLevel = 2; }
+    else { severity = 'خفيفة'; severityLevel = 1; }
+  } else if (hasSize && !hasPE && !hasED) {
+    diagnosisTitle = 'تشخيص: صغر الحجم + تحسين الأداء';
+    severity = 'يتطلب علاجاً مخصصاً'; severityLevel = 2;
+  } else {
+    diagnosisTitle = 'تشخيص: مشاكل جنسية مركبة (متعددة الأعراض)';
+    severity = 'معقدة — تتطلب خطة شاملة'; severityLevel = 3;
+  }
+
+  // Build detailed causes and mechanisms
+  if (hasPE) {
+    const dur = symptom[0] || '';
+    if (dur === 'under1' || dur === '1-3') {
+      mechanisms.push('مستوى السيروتونين منخفض بشكل واضح (5-HT < 150 نانوغرام/مل) — هذا الهرمون المسؤول عن التحكم في الإيلاج');
+      mechanisms.push('الجسم الكavernوسي ضعيف — لا يستطيع الاحتفاظ بالدم لفترة كافية');
+      causes.push('نقص السيروتونين في الجهاز العصبي المركزي');
+    } else {
+      mechanisms.push('حساسية مفرطة في رأس القضيب نتيجة ضعف الجدران الوعائية');
+      causes.push('حساسية عصبية مفرطة + ضعف جدار الجسم الكavernوسي');
+    }
+    if (habits.includes('daily') || habits.includes('weekly')) {
+      mechanisms.push('تلف في النسيج الكavernوسي نتيجة الاستمناء المتكرر — كل مرة تعادل ضغط 6 مرات جماع طبيعي');
+      causes.push('تلف نسيجي في الجسم الكavernوسي (CC damage)');
+    }
+    risks.push('بدون علاج: 85% من الحالات تتطور إلى ضعف انتصاب خلال 12–24 شهراً');
+    risks.push('العلاقة الزوجية تتدهور — 60% من النساء يفقدن الاهتمام بعد 6 أشهر من عدم الرضا');
+  }
+
+  if (hasED) {
+    const edState = symptom[0] || '';
+    if (edState === 'none' || edState === 'weak') {
+      mechanisms.push('تدفق الدم إلى الأعضاء التناسلية منخفض بـ 40–60% من المعدل الطبيعي');
+      mechanisms.push('مستوى أكسيد النيتريك (NO) منخفض — المادة المسؤولة عن توسيع الأوعية الدموية');
+      causes.push('تضييق الأوعية الدموية + نقص أكسيد النيتريك');
+    } else {
+      mechanisms.push('اضطراب في الإشارات العصبية بين الدماغ والأعضاء التناسلية');
+      causes.push('خلل عصبي-وعائي في آلية الانتصاب');
+    }
+    if (health.includes('diabetes')) {
+      mechanisms.push('ارتفاع السكر المزمن يسبب تلفاً في الأعصاب الطرفية (Neuropathy) — يؤثر على الإحساس والتحكم');
+      causes.push('اعتلال الأعصاب السكري');
+    }
+    risks.push('ضعف الانتصاب المزمن يزيد من خطر أمراض القلب والأوعية الدموية بنسبة 70%');
+    risks.push('الحبوب الكيميائية (الفياجرا) لا تعالج السبب — بل تخفي العرض مؤقتاً وتسبب اعتماداً نفسياً');
+  }
+
+  if (hasSize) {
+    mechanisms.push('مستوى التستوستيرون الحر منخفض (< 300 نانوغرام/ديسيلتر)');
+    mechanisms.push('مستوى DHT (الهيدروتستوستيرون) غير كافٍ لتحفيز نمو الأنسجة');
+    mechanisms.push('تدفق دموي ضعيف يمنع توسيع الحجْرات الكavernوسية');
+    causes.push('نقص هرموني (تستوستيرون + DHT) + ضعف تدفق دموي');
+    risks.push('صغر الحجم المزمن مرتبط بانخفاض الثقة الذاتية والاكتئاب بنسبة 45%');
+  }
+
+  // Health conditions
+  if (health.includes('diabetes') && !hasED) {
+    mechanisms.push('السكري المزمن يسبب تلفاً في الأعصاب والأوعية الدموية الصغيرة — يقلل تدفق الدم بنسبة 30–50%');
+    causes.push('اعتلال الأعصاب والأوعية الدموية السكري');
+    risks.push('مرض السكري غير المسيطر عليه يتسبب في تفاقم المشكلة بنسبة 3–4 أضعاف');
+  }
+  if (health.includes('prostate')) {
+    mechanisms.push('تضخم/التهاب البروستاتا يضغط على الأعصاب المحيطة ويقلل تدفق السوائل المنوية');
+    causes.push('ضغط عصبي ناتج عن البروستاتا');
+    risks.push('أمراض البروستاتا المهملة تؤدي إلى مضاعفات مزمنة في الجهاز البولي والتناسلي');
+  }
+  if (health.includes('pressure')) {
+    mechanisms.push('ارتفاع ضغط الدم المزمن يضيق الشريان التناسلي ويقلل تدفق الدم');
+    causes.push('تضيق وعائي ناتج عن ارتفاع ضغط الدم');
+  }
+  if (health.includes('depression')) {
+    mechanisms.push('الاكتئاب والقلق يرفعان الكورتيزول ويخفضان التستوستيرون والدوبامين');
+    causes.push('اضطراب هرموني نفسي (كورتيزول مرتفع + تستوستيرون منخفض)');
+  }
+
+  // Lifestyle
+  if (lifestyle.includes('stress')) {
+    mechanisms.push('التوتر المزمن يرفع الكورتيزول — وكل 1 نانوغرام/مل ارتفاع في الكورتيزول = انخفاض 10% في التستوستيرون');
+    causes.push('فرط الكورتيزول نتيجة التوتر المزمن');
+  }
+  if (lifestyle.includes('sleep')) {
+    mechanisms.push('90% من التستوستيرون يُنتج أثناء النوم العميق (مرحلة REM) — قلة النوم = انخفاض حاد في الهرمون');
+    causes.push('قلة النوم العميق تمنع إنتاج التستوستيرون');
+  }
+  if (lifestyle.includes('sedentary')) {
+    mechanisms.push('قلة الحركة تسبب تراكم الدهون الحشوية — كل 5 نقاط زيادة في نسبة الدهون = انخفاض 50 نانوغرام/مل تستوستيرون');
+    causes.push('قلة النشاط البدني + تراكم دهون حشوية');
+  }
+  if (lifestyle.includes('smoke')) {
+    mechanisms.push('النيكوتين يضيق الأوعية الدموية بنسبة 25% ويقلل الأكسجين الواصل للأعضاء التناسلية');
+    causes.push('تضيق وعائي نتيجة التدخين');
+  }
+
+  if (causes.length === 0) {
+    causes.push('نقص في مستوى السيروتونين والتستوستيرون — الأسباب الأكثر شيوعاً');
+    mechanisms.push('الجسم يحتاج إلى دعم بمكونات طبيعية لتحفيز إنتاج الهرمونات الأساسية');
+  }
+
+  // Package recommendation with 2-phase treatment
+  if (hasPE && !hasED && !hasSize && health.length === 0 && !habits.includes('daily')) {
+    recPackage = 'الأساسي';
+    packageDuration = '30 يوماً';
+    treatmentPhases = [
+      'المرحلة 1 (أيام 1–10): إصلاح النسيج الكavernوسي — L-Arginine + Citrulline + Zinc',
+      'المرحلة 2 (أيام 11–30): تنشيط السيروتونين والتحكم العصبي — Tongkat Ali + Korean Ginseng + Magnesium'
+    ];
+  } else if (hasSize || (hasPE && hasED) || health.length > 0) {
+    recPackage = 'الشامل';
+    packageDuration = '30 يوماً (قابلة للتمديد حسب التقدم)';
+    treatmentPhases = [
+      'المرحلة 1 (أيام 1–15): إصلاح الأنسجة والأوعية — VEGF + FGF + L-Arginine + Omega-3 + B12',
+      'المرحلة 2 (أيام 16–30): التنشيط الهرموني والنمو — DHT precursors + Tongkat Ali + Ginseng + Zinc + Magnesium'
+    ];
+  } else {
+    recPackage = 'المتقدّم';
+    packageDuration = '30 يوماً';
+    treatmentPhases = [
+      'المرحلة 1 (أيام 1–12): إصلاح وعائي وعصبي — L-Arginine + Citrulline + B12',
+      'المرحلة 2 (أيام 13–30): تحفيز هرموني وتحسين الأداء — Tongkat Ali + Ginseng + Zinc'
+    ];
+  }
+
+  // Messenger pre-filled message
+  const msgText = encodeURIComponent(
+    `السلام عليكم د. سارة،\n` +
+    `أجريت التشخيص المجاني على موقعكم.\n` +
+    `النتيجة: ${diagnosisTitle.replace('تشخيص: ', '')}\n` +
+    `الشدة: ${severity}\n` +
+    `عمري: ${age}\n` +
+    `أرغب في معرفة خطة العلاج المفصلة والباقة المناسبة لحالتي.`
+  );
+
+  const severityColor = severityLevel >= 3 ? '#dc2626' : severityLevel === 2 ? '#d97706' : '#0e6149';
+
+  let html = `
+    <div class="result-card fade-in">
+      <div class="result-icon">✅</div>
+      <h2 class="result-title">تم تحديد حالتك بنجاح</h2>
+      <p class="result-subtitle">إليك ملخص التشخيص بناءً على إجاباتك. هذا التحليل يُعدّه نظامنا بناءً على بروتوكولات جونز هوبكنز.</p>
+
+      <!-- Urgency Banner -->
+      <div style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: #fff; padding: 1rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; text-align: center;">
+        <div style="font-size: 1.1rem; font-weight: 700;">⚠️ حالة تتطلب اهتماماً فورياً</div>
+        <div style="font-size: 0.9rem; opacity: 0.95; margin-top: 4px;">كل يوم تأخير = تفاقم في السبب الحقيقي. العلاج المبكر يضاعف فرص الشفاء.</div>
+      </div>
+
+      <div class="diagnosis-box">
+        <h3>${diagnosisTitle}</h3>
+        <p style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">درجة الخطورة: <span style="color: ${severityColor};">${severity}</span></p>
+        <p>بناءً على إجاباتك، حالتك تندرج تحت <strong>${severity}</strong>. هذا يعني أن السبب الحقيقي يتطلب علاجاً مخصصاً — وليس منتجاً جاهزاً من الصيدلية.</p>
+
+        <p style="margin-top: 0.75rem; font-weight: 600; color: var(--text-primary);">الآلية الفسيولوجية المؤثرة في حالتك:</p>
+        <ul style="margin-bottom: 1rem;">
+          ${mechanisms.map(m => `<li>• ${m}</li>`).join('')}
+        </ul>
+
+        <p style="margin-top: 0.75rem; font-weight: 600; color: var(--text-primary);">الأسباب الجذرية المؤكدة:</p>
+        <ul>
+          ${causes.map(c => `<li>• ${c}</li>`).join('')}
+        </ul>
+      </div>
+
+      <!-- Risk Box -->
+      <div class="diagnosis-box" style="border-right-color: #dc2626; background: linear-gradient(135deg, rgba(220,38,38,0.04), rgba(185,28,28,0.06));">
+        <h3 style="color: #dc2626;">⚠️ مخاطر تأخير العلاج</h3>
+        <ul>
+          ${risks.map(r => `<li>• ${r}</li>`).join('')}
+        </ul>
+        <p style="margin-top: 0.75rem; font-weight: 600; color: #7f1d1d;">بدون علاج يستهدف السبب الحقيقي، المشكلة تتفاقم تدريجياً — والحبوب الكيميائية لا تعالج السبب، بل تخفيه فقط.</p>
+      </div>
+
+      <!-- Treatment Plan -->
+      <div class="recommendation">
+        <h4>🎯 خطة العلاج المقترحة: باقة ${recPackage}</h4>
+        <p style="margin-bottom: 1rem;">بناءً على تشخيصك، نوصي بـ <strong>برنامج ${recPackage}</strong> المخصص. هذا البرنامج يعتمد على مبدأ العلاج بمرحلتين — مطوَّر من بروتوكولات جونز هوبكنز:</p>
+        <ul style="padding-right: 1.2rem; margin-bottom: 1rem;">
+          ${treatmentPhases.map(t => `<li style="padding: 6px 0; font-size: 0.95rem;">${t}</li>`).join('')}
+        </ul>
+        <p><strong>المدة:</strong> ${packageDuration} · <strong>السعر:</strong> يُحدد بعد الاستشارة</p>
+        <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">كل تركيبة مُعدّة خصيصاً بعد استشارتك مع د. سارة — لا توجد منتجات جاهزة. المكونات 100% طبيعية، معتمدة من FDA وGMP وSGS، وحلال 100%.</p>
+      </div>
+
+      <a class="messenger-cta" href="https://m.me/DrSarahClinic" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+          <path d="M12 2C6.48 2 2 6.03 2 11c0 2.64 1.21 5 3.13 6.56.17.14.27.36.23.58l-.49 2.37 2.92-1.63c.2-.11.44-.12.65-.03C9.76 19.55 10.85 19.8 12 19.8c5.52 0 10-4.03 10-9s-4.48-9-10-9zm5.24 7.24l-2.12 3.36c-.33.52-.92.84-1.56.84h-.02c-.64 0-1.23-.32-1.56-.84l-1.1-1.74c-.11-.17-.3-.27-.5-.27s-.39.1-.5.27l-1.64 2.6c-.23.36-.7.47-1.06.24-.36-.23-.47-.7-.24-1.06l2.12-3.36c.33-.52.92-.84 1.56-.84h.02c.64 0 1.23.32 1.56.84l1.1 1.74c.11.17.3.27.5.27s.39-.1.5-.27l1.64-2.6c.23-.36.7-.47 1.06-.24.36.23.47.7.24 1.06z"/>
+        </svg>
+        💬 تواصل مع د. سارة على ماسنجر — خطة العلاج المفصلة
+      </a>
+
+      <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 520px; margin: 1rem auto; line-height: 1.7;">
+        د. سارة ستناقش معك هذا التشخيص بالتفصيل، وتُجيب على أسئلتك، ثم تُعدّ لك <strong>التركيبة المخصصة</strong> والجرعة المناسبة لجسمك.<br/>
+        <strong style="color: var(--primary);">الاستشارة مجانية تماماً — والعلاج يبدأ بعد تشخيص دقيق.</strong>
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 1rem 0;">
+        <span style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: var(--radius-full);">🔒 سرية تامة</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: var(--radius-full);">💵 الدفع عند الاستلام</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: var(--radius-full);">🛡️ ضمان 90 يوماً</span>
+      </div>
+
+      <p class="privacy-note">
+        <span>🔒</span> كل معلوماتك تبقى سرية تماماً — لا نحتفظ بها على الخادم
+      </p>
+    </div>
+  `;
+
+  card.innerHTML = html;
+}
+
+renderStep();
+</script>
+</body>
+</html>
