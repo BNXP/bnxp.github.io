@@ -64,11 +64,21 @@ const LANG_CONFIG = {
 
 let currentTranslations = {};
 let fallbackTranslations = {};
+let pageLocalePrefix = '';
 
-function loadLocaleXHR(lang) {
+function getLocalePrefix() {
+  const path = window.location.pathname;
+  if (path.includes('/crisis/')) return 'crisis/';
+  if (path.includes('/treatments/premature-ejaculation')) return 'treatments/pe/';
+  if (path.includes('/treatments/erectile-dysfunction')) return 'treatments/ed/';
+  if (path.includes('/treatments/penis-enlargement')) return 'treatments/enlargement/';
+  return '';
+}
+
+function loadLocaleXHR(lang, prefix) {
   return new Promise((resolve) => {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `locales/${lang}.json`, true);
+    xhr.open('GET', `locales/${prefix}${lang}.json`, true);
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200 || xhr.status === 0) {
@@ -87,16 +97,26 @@ function loadLocaleXHR(lang) {
   });
 }
 
-async function loadLocale(lang) {
+async function loadLocale(lang, prefix) {
+  prefix = prefix || pageLocalePrefix;
   try {
-    const res = await fetch(`locales/${lang}.json`, { cache: 'no-store' });
+    const res = await fetch(`locales/${prefix}${lang}.json`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Locale not found');
     return await res.json();
   } catch (e) {
-    console.warn('Fetch failed for locale', lang, '- trying XHR fallback...');
-    // Fallback for file:// protocol or CORS issues
-    return await loadLocaleXHR(lang);
+    console.warn('Fetch failed for locale', lang, 'prefix:', prefix, '- trying XHR fallback...');
+    return await loadLocaleXHR(lang, prefix);
   }
+}
+
+async function loadMergedLocale(lang) {
+  // Load page-specific locale + root locale, merge them
+  pageLocalePrefix = getLocalePrefix();
+  const [pageDict, rootDict] = await Promise.all([
+    loadLocale(lang, pageLocalePrefix),
+    loadLocale(lang, '')
+  ]);
+  return { ...rootDict, ...pageDict };
 }
 
 function applyTranslations(lang, dict) {
@@ -151,7 +171,7 @@ async function setLanguage(lang, isUserAction = false) {
   }
 
   console.log('[i18n] Loading locale:', lang);
-  const dict = await loadLocale(lang);
+  const dict = await loadMergedLocale(lang);
 
   if (Object.keys(dict).length === 0) {
     console.error('[i18n] Failed to load locale file:', lang);
@@ -222,7 +242,12 @@ async function detectLanguageByIP() {
 
 async function initI18n() {
   // Pre-load fallback (Arabic — primary content)
-  fallbackTranslations = await loadLocale(LANG_CONFIG.default);
+  pageLocalePrefix = getLocalePrefix();
+  const [pageFallback, rootFallback] = await Promise.all([
+    loadLocale(LANG_CONFIG.default, pageLocalePrefix),
+    loadLocale(LANG_CONFIG.default, '')
+  ]);
+  fallbackTranslations = { ...rootFallback, ...pageFallback };
 
   let lang = null;
 
