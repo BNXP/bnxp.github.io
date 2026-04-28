@@ -72,12 +72,13 @@ function getLocalePrefix() {
   if (path.includes('/treatments/premature-ejaculation')) return 'treatments/pe/';
   if (path.includes('/treatments/erectile-dysfunction')) return 'treatments/ed/';
   if (path.includes('/treatments/penis-enlargement')) return 'treatments/enlargement/';
+  if (path.includes('/quiz/')) return 'quiz/';
   return '';
 }
 
 function getLocaleBasePath() {
   const path = window.location.pathname;
-  if (path.includes('/crisis/') || path.includes('/treatments/')) return '../locales/';
+  if (path.includes('/crisis/') || path.includes('/treatments/') || path.includes('/quiz/')) return '../locales/';
   return 'locales/';
 }
 
@@ -194,8 +195,10 @@ async function setLanguage(lang, isUserAction = false) {
 
   console.log('[i18n] Locale loaded:', lang, '- keys:', Object.keys(dict).length);
   currentTranslations = dict;
+  window.currentTranslations = currentTranslations;
   applyTranslations(lang, currentTranslations);
   try { localStorage.setItem('site-lang', lang); } catch (e) {}
+  document.dispatchEvent(new CustomEvent('i18n-ready', { detail: { lang } }));
 }
 
 function detectBrowserLanguage() {
