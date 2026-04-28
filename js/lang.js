@@ -75,10 +75,17 @@ function getLocalePrefix() {
   return '';
 }
 
+function getLocaleBasePath() {
+  const path = window.location.pathname;
+  if (path.includes('/crisis/') || path.includes('/treatments/')) return '../locales/';
+  return 'locales/';
+}
+
 function loadLocaleXHR(lang, prefix) {
   return new Promise((resolve) => {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `locales/${prefix}${lang}.json`, true);
+    const base = getLocaleBasePath();
+    xhr.open('GET', `${base}${prefix}${lang}.json`, true);
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200 || xhr.status === 0) {
@@ -99,8 +106,9 @@ function loadLocaleXHR(lang, prefix) {
 
 async function loadLocale(lang, prefix) {
   prefix = prefix || pageLocalePrefix;
+  const base = getLocaleBasePath();
   try {
-    const res = await fetch(`locales/${prefix}${lang}.json`, { cache: 'no-store' });
+    const res = await fetch(`${base}${prefix}${lang}.json`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Locale not found');
     return await res.json();
   } catch (e) {
