@@ -27,6 +27,7 @@
   "quiz_messenger_cta": "💬 Contact Dr. Sarah on Messenger — Detailed Treatment Plan",
   "quiz_result_desc": "Dr. Sarah will discuss this diagnosis with you in detail, answer your questions, and then prepare <strong>your custom formula</strong> and the right dosage for your body.<br/><strong style=\"color: var(--primary);\">The consultation is completely free — treatment begins after an accurate diagnosis.</strong>",
   "quiz_privacy_note": "🔒 All your information remains completely confidential — we do not store it on our server",
+  "quiz_multi_select_hint": "You can select multiple options",
 
   "quiz_diag_pe": "Diagnosis: Premature Ejaculation",
   "quiz_diag_ed": "Diagnosis: Erectile Dysfunction",

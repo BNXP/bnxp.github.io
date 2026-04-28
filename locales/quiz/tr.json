@@ -27,6 +27,7 @@
   "quiz_messenger_cta": "💬 Dr. Sarah ile Messenger'dan İletişime Geçin — Detaylı Tedavi Planı",
   "quiz_result_desc": "Dr. Sarah bu tanıyı sizinle detaylı olarak tartışacak, sorularınızı yanıtlayacak ve ardından <strong>sizin özel formülünüzü</strong> ve vücudunuz için doğru dozu hazırlayacaktır.<br/><strong style=\"color: var(--primary);\">Danışmanlık tamamen ücretsizdir — tedavi, doğru tanı sonrası başlar.</strong>",
   "quiz_privacy_note": "🔒 Tüm bilgileriniz tamamen gizli kalır — sunucumuzda saklamıyoruz",
+  "quiz_multi_select_hint": "Birden fazla seçenek seçebilirsiniz",
 
   "quiz_diag_pe": "Tanı: Erken Boşalma",
   "quiz_diag_ed": "Tanı: Ereksiyon Sorunu",

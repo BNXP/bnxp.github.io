@@ -27,6 +27,7 @@
   "quiz_messenger_cta": "💬 تواصل مع د. سارة على ماسنجر — خطة العلاج المفصلة",
   "quiz_result_desc": "د. سارة ستناقش معك هذا التشخيص بالتفصيل، وتُجيب على أسئلتك، ثم تُعدّ لك <strong>التركيبة المخصصة</strong> والجرعة المناسبة لجسمك.<br/><strong style=\"color: var(--primary);\">الاستشارة مجانية تماماً — والعلاج يبدأ بعد تشخيص دقيق.</strong>",
   "quiz_privacy_note": "🔒 كل معلوماتك تبقى سرية تماماً — لا نحتفظ بها على الخادم",
+  "quiz_multi_select_hint": "يمكنك اختيار أكثر من واحد",
 
   "quiz_diag_pe": "تشخيص: سرعة القذف (Premature Ejaculation)",
   "quiz_diag_ed": "تشخيص: ضعف الانتصاب (Erectile Dysfunction)",
