@@ -2140,8 +2140,18 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: var(--shadow-xl);
 }
 .plan-featured {
-  border: 2px solid var(--secondary);
+  border: 3px solid var(--secondary);
   background: linear-gradient(180deg, #fff 0%, #fdfbf6 100%);
+  box-shadow: 0 8px 32px rgba(201,169,110,0.22), 0 2px 8px rgba(14,97,73,0.08);
+  transform: scale(1.02);
+}
+.plan-featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--secondary-dark), var(--secondary), var(--secondary-light), var(--secondary));
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 .plan-header {
   text-align: center;
@@ -2164,6 +2174,11 @@ button { font-family: inherit; cursor: pointer; }
 .plan-badge.featured {
   background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
   color: var(--primary-dark);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,110,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(201,169,110,0); }
 }
 .plan-name {
   font-size: 1.4rem;
