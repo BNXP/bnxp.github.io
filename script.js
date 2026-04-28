@@ -121,20 +121,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const topicMap = {
-        pe: 'سرعة القذف',
-        ed: 'ضعف الانتصاب',
-        enlargement: 'تكبير القضيب',
-        all: 'المشاكل الثلاث معاً',
-        testosterone: 'التستوستيرون والطاقة',
-        inquiry: 'استفسار عن منتج/سعر'
+        pe: '早泄',
+        ed: '阳痿',
+        enlargement: '增大',
+        all: '全部问题',
+        testosterone: '睾酮和精力',
+        inquiry: '产品/价格咨询'
       };
 
-      let text = `📋 <b>طلب استشارة جديد</b>\n\n`;
-      text += `👤 <b>الماسنجر:</b> ${escapeHtml(name)}\n`;
-      text += `📱 <b>واتساب:</b> ${escapeHtml(phone)}\n`;
-      text += `📌 <b>المشكلة:</b> ${topicMap[topic] || topic}\n`;
-      if (message) text += `📝 <b>الوصف:</b> ${escapeHtml(message)}\n`;
-      text += `\n⏰ ${new Date().toLocaleString('ar-SA')}`;
+      let text = `📋 <b>新的咨询请求</b>\n`;
+      text += `━━━━━━━━━━━━━━━━━━━━\n`;
+      text += `👤 <b>客户信息</b>\n`;
+      text += `• Messenger名字: ${escapeHtml(name)}\n`;
+      text += `• WhatsApp: ${escapeHtml(phone)}\n\n`;
+      text += `📌 <b>问题类型</b>\n`;
+      text += `• ${topicMap[topic] || topic}\n`;
+      if (message) text += `• 描述: ${escapeHtml(message)}\n`;
+      text += `\n⏰ 提交时间: ${new Date().toLocaleString('zh-CN')}`;
 
       btn.disabled = true;
       btn.textContent = 'جاري الإرسال...';
