@@ -184,5 +184,24 @@
   "quiz_rec_duration_value": "30 يوماً",
   "quiz_rec_duration_extendable": "30 يوماً (قابلة للتمديد حسب التقدم)",
   "quiz_years_label": "سنة",
-  "quiz_months_label": "شهر"
+  "quiz_months_label": "شهر",
+
+  "quiz_selector_title": "بناءً على تشخيصك، اختر الخطة المناسبة لحالتك",
+  "quiz_selector_subtitle": "كل خطة مُصممة خصيصاً — ليست حبوب عامة",
+  "quiz_plan_basic_name": "البرنامج الأساسي",
+  "quiz_plan_pro_name": "البرنامج المتكامل",
+  "quiz_plan_basic_price": "465",
+  "quiz_plan_pro_price": "658",
+  "quiz_plan_currency": "درهم",
+  "quiz_plan_rec_badge": "✨ موصى به لتشخيصك",
+  "quiz_plan_cta_basic": "اطلب البرنامج الأساسي",
+  "quiz_plan_cta_pro": "اطلب البرنامج المتكامل",
+  "quiz_send_title": "أرسل تشخيصك إلى د. سارة",
+  "quiz_send_subtitle": "د. سارة ستُراجع حالتك شخصياً وتُرشّدك للخطة الأنسب — بسرية تامة",
+  "quiz_send_name_ph": "اسمك",
+  "quiz_send_phone_ph": "رقم الواتساب",
+  "quiz_send_btn": "📨 إرسال التشخيص إلى د. سارة",
+  "quiz_trust_halal": "☪️ حلال 100%",
+  "quiz_trust_natural": "🌿 طبيعي",
+  "quiz_trust_secret": "🔒 سرية تامة"
 }

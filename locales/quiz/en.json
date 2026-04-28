@@ -184,5 +184,24 @@
   "quiz_rec_duration_value": "30 days",
   "quiz_rec_duration_extendable": "30 days (extendable based on progress)",
   "quiz_years_label": "years",
-  "quiz_months_label": "months"
+  "quiz_months_label": "months",
+
+  "quiz_selector_title": "Based on your diagnosis, choose the right plan",
+  "quiz_selector_subtitle": "Every plan is custom-made — not generic pills",
+  "quiz_plan_basic_name": "Basic Program",
+  "quiz_plan_pro_name": "Comprehensive Program",
+  "quiz_plan_basic_price": "465",
+  "quiz_plan_pro_price": "658",
+  "quiz_plan_currency": "AED",
+  "quiz_plan_rec_badge": "✨ Recommended for your diagnosis",
+  "quiz_plan_cta_basic": "Order Basic Program",
+  "quiz_plan_cta_pro": "Order Comprehensive Program",
+  "quiz_send_title": "Send Your Diagnosis to Dr. Sarah",
+  "quiz_send_subtitle": "Dr. Sarah will personally review your case and guide you to the best plan — with complete confidentiality",
+  "quiz_send_name_ph": "Your Name",
+  "quiz_send_phone_ph": "WhatsApp Number",
+  "quiz_send_btn": "📨 Send Diagnosis to Dr. Sarah",
+  "quiz_trust_halal": "☪️ 100% Halal",
+  "quiz_trust_natural": "🌿 Natural",
+  "quiz_trust_secret": "🔒 Fully Confidential"
 }

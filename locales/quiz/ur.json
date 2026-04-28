@@ -184,5 +184,24 @@
   "quiz_rec_duration_value": "30 دن",
   "quiz_rec_duration_extendable": "30 دن (پیش رفت کی بنیاد پر قابل توسیع)",
   "quiz_years_label": "سال",
-  "quiz_months_label": "ماہ"
+  "quiz_months_label": "ماہ",
+
+  "quiz_selector_title": "اپنی تشخیص کے مطابق مناسب پلان منتخب کریں",
+  "quiz_selector_subtitle": "ہر پلان حسب ضرورت تیار کیا گیا ہے — عام گولیاں نہیں",
+  "quiz_plan_basic_name": "بنیادی پروگرام",
+  "quiz_plan_pro_name": "جامع پروگرام",
+  "quiz_plan_basic_price": "465",
+  "quiz_plan_pro_price": "658",
+  "quiz_plan_currency": "AED",
+  "quiz_plan_rec_badge": "✨ آپ کی تشخیص کے لیے تجویز کردہ",
+  "quiz_plan_cta_basic": "بنیادی پروگرام کا آرڈر دیں",
+  "quiz_plan_cta_pro": "جامع پروگرام کا آرڈر دیں",
+  "quiz_send_title": "اپنی تشخیص ڈاکٹر سارہ کو بھیجیں",
+  "quiz_send_subtitle": "ڈاکٹر سارہ آپ کی حالت کا ذاتی جائزہ لیں گی اور آپ کو بہترین پلان کی ہدایت دیں گی — مکمل رازداری کے ساتھ",
+  "quiz_send_name_ph": "آپ کا نام",
+  "quiz_send_phone_ph": "واٹس ایپ نمبر",
+  "quiz_send_btn": "📨 تشخیص ڈاکٹر سارہ کو بھیجیں",
+  "quiz_trust_halal": "☪️ 100% حلال",
+  "quiz_trust_natural": "🌿 قدرتی",
+  "quiz_trust_secret": "🔒 مکمل رازداری"
 }

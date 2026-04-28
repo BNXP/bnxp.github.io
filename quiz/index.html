@@ -168,11 +168,236 @@ html[dir="ltr"] .recommendation { text-align: left; }
 .quiz-footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: var(--text-muted); }
 .quiz-footer a { color: var(--primary); }
 
-/* Animations */
-.fade-in { animation: fadeIn 0.4s ease both; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+/* ===== Treatment Plan Selector ===== */
+.treatment-selector {
+  margin: 2rem 0 1.5rem;
+  text-align: center;
+}
+.selector-headline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+}
+.plan-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.plan-option {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1rem;
+  text-align: right;
+  position: relative;
+  transition: all 0.25s ease;
+}
+.plan-option:hover {
+  border-color: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.plan-option.recommended {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(14,97,73,0.04), rgba(201,169,110,0.06));
+}
+.plan-badge-rec {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+.plan-option-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.plan-option-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+.plan-option-price span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.plan-features-custom {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.plan-features-custom li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 4px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.plan-features-custom li::before {
+  content: '✓';
+  color: var(--primary);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.plan-option .btn-plan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background: var(--primary);
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+.plan-option .btn-plan:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+.plan-option .btn-plan-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border-light);
+}
+.plan-option .btn-plan-secondary:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary-light);
+}
+html[dir="ltr"] .plan-option { text-align: left; }
+html[dir="ltr"] .plan-features-custom li { flex-direction: row-reverse; }
+
+/* ===== Send to Dr. Sarah Section ===== */
+.send-to-sarah-section {
+  margin: 2.5rem 0 1rem;
+  position: relative;
+}
+.islamic-frame {
+  background: linear-gradient(135deg, #fdfbf6, #f5efe1);
+  border: 2px solid var(--secondary);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.islamic-frame::before,
+.islamic-frame::after {
+  content: '☪';
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.06;
+  color: var(--primary);
+  line-height: 1;
+}
+.islamic-frame::before { top: 8px; right: 12px; }
+.islamic-frame::after { bottom: 8px; left: 12px; transform: rotate(180deg); }
+.islamic-frame .frame-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--secondary);
+}
+.islamic-frame .frame-corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; border-radius: var(--radius-lg) 0 0 0; }
+.islamic-frame .frame-corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; border-radius: 0 var(--radius-lg) 0 0; }
+.islamic-frame .frame-corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; border-radius: 0 0 0 var(--radius-lg); }
+.islamic-frame .frame-corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; border-radius: 0 0 var(--radius-lg) 0; }
+.sarah-section-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.sarah-section-sub {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+.sarah-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: right;
+}
+html[dir="ltr"] .sarah-form { text-align: left; }
+.sarah-form input {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--text-primary);
+}
+.sarah-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.sarah-form .btn-send {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.sarah-form .btn-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14,97,73,0.25);
+}
+.sarah-form .btn-send:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+.sarah-trust-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.sarah-trust-line span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(14,97,73,0.05);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
 
 @media (max-width: 640px) {
+  .plan-options { grid-template-columns: 1fr; }
+  .plan-option { padding: 1rem; }
+  .islamic-frame { padding: 1.5rem 1rem; }
+  .sarah-section-title { font-size: 1rem; }
+}
   .quiz-card { padding: 1.5rem; min-height: auto; }
   .step-question { font-size: 1.1rem; }
   .option-btn { padding: 0.875rem 1rem; font-size: 0.95rem; }
@@ -238,6 +463,26 @@ function t(key, vars) {
       'quiz_messenger_cta': '💬 تواصل مع د. سارة على ماسنجر',
       'quiz_result_desc': 'الاستشارة مجانية تماماً — والعلاج يبدأ بعد تشخيص دقيق.',
       'quiz_privacy_note': '🔒 كل معلوماتك تبقى سرية تماماً.',
+      'quiz_selector_title': 'بناءً على تشخيصك، اختر الخطة المناسبة لحالتك',
+      'quiz_selector_subtitle': 'كل خطة مُصممة خصيصاً — ليست حبوب عامة',
+      'quiz_plan_basic_name': 'البرنامج الأساسي',
+      'quiz_plan_pro_name': 'البرنامج المتكامل',
+      'quiz_plan_basic_price': '465',
+      'quiz_plan_pro_price': '658',
+      'quiz_plan_currency': 'درهم',
+      'quiz_plan_rec_badge': '✨ موصى به لتشخيصك',
+      'quiz_plan_cta_basic': 'اطلب البرنامج الأساسي',
+      'quiz_plan_cta_pro': 'اطلب البرنامج المتكامل',
+      'quiz_send_title': 'أرسل تشخيصك إلى د. سارة',
+      'quiz_send_subtitle': 'د. سارة ستُراجع حالتك شخصياً وتُرشّدك للخطة الأنسب — بسرية تامة',
+      'quiz_send_name_ph': 'اسمك',
+      'quiz_send_phone_ph': 'رقم الواتساب',
+      'quiz_send_btn': '📨 إرسال التشخيص إلى د. سارة',
+      'quiz_send_success': '✅ تم إرسال التشخيص — د. سارة ستتواصل معك خلال 24 ساعة',
+      'quiz_send_error': 'فشل الإرسال. الرجاء التواصل مباشرة عبر الواتساب.',
+      'quiz_trust_halal': '☪️ حلال 100%',
+      'quiz_trust_natural': '🌿 طبيعي',
+      'quiz_trust_secret': '🔒 سرية تامة',
       'quiz_diag_pe': 'تشخيص: سرعة القذف',
       'quiz_diag_ed': 'تشخيص: ضعف الانتصاب',
       'quiz_diag_size': 'تشخيص: صغر الحجم + تحسين الأداء',
@@ -705,6 +950,107 @@ function renderResult() {
 
   const severityColor = severityLevel >= 3 ? '#dc2626' : severityLevel === 2 ? '#d97706' : '#0e6149';
 
+  // ===== Personalized Treatment Plan Features =====
+  const basicFeatures = [];
+  const proFeatures = [];
+
+  if (hasPE) {
+    basicFeatures.push('تركيبة مخصصة لسرعة القذف — إعادة توازن السيروتونين');
+    proFeatures.push('علاج مكثف لسرعة القذف — إصلاح النسيج الكافيورنوسي والسيطرة العصبية');
+  }
+  if (hasED) {
+    basicFeatures.push('تركيبة لتحسين تدفق الدم — تعزيز أكسيد النيتريك الطبيعي');
+    proFeatures.push('إصلاح الأوعية الدموية + استعادة الإشارات العصبية بشكل كامل');
+  }
+  if (hasSize) {
+    basicFeatures.push('تركيبة لدعم مستوى التستوستيرون الطبيعي');
+    proFeatures.push('تحفيز نمو الأنسجة الكافيورنوسية + تدفق دموي مُحسّن');
+  }
+  if (!hasPE && !hasED && !hasSize) {
+    basicFeatures.push('تركيبة عامة لدعم الصحة الجنسية والطاقة');
+    proFeatures.push('برنامج شامل لجميع المشاكل الجنسية المركبة');
+  }
+
+  basicFeatures.push('متابعة يومية عبر واتساب مع د. سارة');
+  basicFeatures.push('شحن سري ومجاني — الدفع عند الاستلام');
+  basicFeatures.push('ضمان استرداد كامل 90 يوم');
+
+  proFeatures.push('متابعة يومية شخصية مع د. سارة عبر واتساب');
+  proFeatures.push('شحن VIP مجاني — تغليف سري 100%');
+  if (health.length > 0) {
+    proFeatures.push('تعديلات خاصة للحالات المزمنة (سكري / ضغط / بروستاتا)');
+  }
+  if (habits.includes('daily') || habits.includes('weekly')) {
+    proFeatures.push('برنامج إصلاحي مُسرّع للتلف النسيجي');
+  }
+  proFeatures.push('كريم تدليك طبيعي + تمارين كيجل وتمارين تمدد مخصصة');
+  proFeatures.push('ضمان استرداد كامل 90 يوم');
+
+  const isBasicRec = (hasPE && !hasED && !hasSize && health.length === 0 && !habits.includes('daily') && severityLevel <= 1);
+  const basicRecClass = isBasicRec ? 'recommended' : '';
+  const proRecClass = !isBasicRec ? 'recommended' : '';
+  const basicBadge = isBasicRec ? `<div class="plan-badge-rec">${t('quiz_plan_rec_badge')}</div>` : '';
+  const proBadge = !isBasicRec ? `<div class="plan-badge-rec">${t('quiz_plan_rec_badge')}</div>` : '';
+
+  const treatmentSelectorHtml = `
+    <div class="treatment-selector">
+      <div class="selector-headline">${t('quiz_selector_title')}</div>
+      <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">${t('quiz_selector_subtitle')}</div>
+      <div class="plan-options">
+        <div class="plan-option ${basicRecClass}">
+          ${basicBadge}
+          <div class="plan-option-name">${t('quiz_plan_basic_name')}</div>
+          <div class="plan-option-price">${t('quiz_plan_basic_price')} <span>${t('quiz_plan_currency')}</span></div>
+          <ul class="plan-features-custom">
+            ${basicFeatures.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+          <a class="btn-plan btn-plan-secondary" href="https://halal-health.shop/b" target="_blank" rel="noopener">${t('quiz_plan_cta_basic')}</a>
+        </div>
+        <div class="plan-option ${proRecClass}">
+          ${proBadge}
+          <div class="plan-option-name">${t('quiz_plan_pro_name')}</div>
+          <div class="plan-option-price">${t('quiz_plan_pro_price')} <span>${t('quiz_plan_currency')}</span></div>
+          <ul class="plan-features-custom">
+            ${proFeatures.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+          <a class="btn-plan" href="https://halal-health.shop/a" target="_blank" rel="noopener">${t('quiz_plan_cta_pro')}</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const diagnosisSummary = encodeURIComponent(
+    `*تشخيصي من موقع د. سارة*\n\n` +
+    `📌 ${diagnosisTitle.replace('تشخيص: ', '')}\n` +
+    `⚠️ الشدة: ${severity}\n` +
+    `👤 العمر: ${age}\n` +
+    `📝 الأسباب المؤكدة: ${causes.join('، ')}\n\n` +
+    `أرغب في معرفة الخطة العلاجية المناسبة لحالتي.`
+  );
+
+  const sendToSarahHtml = `
+    <div class="send-to-sarah-section">
+      <div class="islamic-frame">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="sarah-section-title">${t('quiz_send_title')}</div>
+        <div class="sarah-section-sub">${t('quiz_send_subtitle')}</div>
+        <form class="sarah-form" id="sarahForm" onsubmit="sendDiagnosisToSarah(event)">
+          <input type="text" name="sendName" placeholder="${t('quiz_send_name_ph')}" required />
+          <input type="tel" name="sendPhone" placeholder="${t('quiz_send_phone_ph')}" required />
+          <button type="submit" class="btn-send">${t('quiz_send_btn')}</button>
+        </form>
+        <div class="sarah-trust-line">
+          <span>${t('quiz_trust_halal')}</span>
+          <span>${t('quiz_trust_natural')}</span>
+          <span>${t('quiz_trust_secret')}</span>
+        </div>
+      </div>
+    </div>
+  `;
+
   let html = `
     <div class="result-card fade-in">
       <div class="result-icon">✅</div>
@@ -750,22 +1096,9 @@ function renderResult() {
         <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">${t('quiz_rec_ingredients_note')}</p>
       </div>
 
-      <a class="messenger-cta" href="https://m.me/DrSarahClinic" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
-          <path d="M12 2C6.48 2 2 6.03 2 11c0 2.64 1.21 5 3.13 6.56.17.14.27.36.23.58l-.49 2.37 2.92-1.63c.2-.11.44-.12.65-.03C9.76 19.55 10.85 19.8 12 19.8c5.52 0 10-4.03 10-9s-4.48-9-10-9zm5.24 7.24l-2.12 3.36c-.33.52-.92.84-1.56.84h-.02c-.64 0-1.23-.32-1.56-.84l-1.1-1.74c-.11-.17-.3-.27-.5-.27s-.39.1-.5.27l-1.64 2.6c-.23.36-.7.47-1.06.24-.36-.23-.47-.7-.24-1.06l2.12-3.36c.33-.52.92-.84 1.56-.84h.02c.64 0 1.23.32 1.56.84l1.1 1.74c.11.17.3.27.5.27s.39-.1.5-.27l1.64-2.6c.23-.36.7-.47 1.06-.24.36.23.47.7.24 1.06z"/>
-        </svg>
-        ${t('quiz_messenger_cta')}
-      </a>
+      ${treatmentSelectorHtml}
 
-      <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 520px; margin: 1rem auto; line-height: 1.7;">
-        ${t('quiz_result_desc')}
-      </p>
-
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 1rem 0;">
-        <span style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: var(--radius-full);">🔒 ${t('quiz_footer_privacy')}</span>
-        <span style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: var(--radius-full);">💵 ${t('quiz_rec_price_note')}</span>
-        <span style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 4px 12px; border-radius: var(--radius-full);">🛡️ ${t('quiz_rec_duration_value')}</span>
-      </div>
+      ${sendToSarahHtml}
 
       <p class="privacy-note">
         <span>🔒</span> ${t('quiz_privacy_note')}
@@ -774,6 +1107,74 @@ function renderResult() {
   `;
 
   card.innerHTML = html;
+}
+
+// ===== Send Diagnosis to Dr. Sarah =====
+function sendDiagnosisToSarah(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.btn-send');
+  const originalText = btn.textContent;
+
+  const name = form.querySelector('[name="sendName"]').value.trim();
+  const phone = form.querySelector('[name="sendPhone"]').value.trim();
+
+  if (!name || !phone) {
+    alert('الرجاء ملء جميع الحقول');
+    return;
+  }
+
+  // Rebuild diagnosis summary from answers
+  const cond = answers.condition || [];
+  const hasPE = cond.includes('pe') || cond.includes('all');
+  const hasED = cond.includes('ed') || cond.includes('all');
+  const hasSize = cond.includes('size') || cond.includes('all');
+  const age = answers.age?.[0] || '';
+
+  let diagnosisTitle = '';
+  if (hasPE && !hasED && !hasSize) diagnosisTitle = 'سرعة القذف';
+  else if (hasED && !hasPE && !hasSize) diagnosisTitle = 'ضعف الانتصاب';
+  else if (hasSize && !hasPE && !hasED) diagnosisTitle = 'صغر الحجم + تحسين الأداء';
+  else diagnosisTitle = 'مشاكل جنسية مركبة';
+
+  const text = `📋 <b>طلب استشارة جديد من التشخيص</b>\n\n` +
+    `👤 <b>الاسم:</b> ${name}\n` +
+    `📱 <b>الواتساب:</b> ${phone}\n` +
+    `📌 <b>التشخيص:</b> ${diagnosisTitle}\n` +
+    `👤 <b>العمر:</b> ${age}\n\n` +
+    `⏰ ${new Date().toLocaleString('ar-SA')}`;
+
+  btn.disabled = true;
+  btn.textContent = 'جاري الإرسال...';
+
+  const TELEGRAM_BOT_TOKEN = '8774208676:AAF4fmYVHXTK3lLIIggBqNBi6FI4pVkTnuI';
+  const TELEGRAM_CHAT_ID   = '8758562396';
+
+  fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: TELEGRAM_CHAT_ID,
+      text: text,
+      parse_mode: 'HTML'
+    })
+  })
+  .then(r => r.json())
+  .then(result => {
+    if (result.ok) {
+      btn.textContent = '✅ تم الإرسال — د. سارة ستتواصل معك';
+      form.reset();
+      setTimeout(() => { btn.disabled = false; btn.textContent = originalText; }, 4000);
+    } else {
+      throw new Error(result.description);
+    }
+  })
+  .catch(err => {
+    console.error('Send failed:', err);
+    btn.disabled = false;
+    btn.textContent = originalText;
+    alert('فشل الإرسال. الرجاء التواصل مباشرة عبر الواتساب.');
+  });
 }
 
 // ===== Initialize =====

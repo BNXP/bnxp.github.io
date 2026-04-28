@@ -184,5 +184,24 @@
   "quiz_rec_duration_value": "30 gün",
   "quiz_rec_duration_extendable": "30 gün (ilerlemeye göre uzatılabilir)",
   "quiz_years_label": "yıl",
-  "quiz_months_label": "ay"
+  "quiz_months_label": "ay",
+
+  "quiz_selector_title": "Tanınıza göre size uygun planı seçin",
+  "quiz_selector_subtitle": "Her plan özel olarak hazırlanmıştır — genel haplar değil",
+  "quiz_plan_basic_name": "Temel Program",
+  "quiz_plan_pro_name": "Kapsamlı Program",
+  "quiz_plan_basic_price": "465",
+  "quiz_plan_pro_price": "658",
+  "quiz_plan_currency": "AED",
+  "quiz_plan_rec_badge": "✨ Tanınız için Önerilir",
+  "quiz_plan_cta_basic": "Temel Programı Sipariş Et",
+  "quiz_plan_cta_pro": "Kapsamlı Programı Sipariş Et",
+  "quiz_send_title": "Tanınızı Dr. Sarah'a Gönderin",
+  "quiz_send_subtitle": "Dr. Sarah durumunuzu kişisel olarak inceleyecek ve size en uygun planı yönlendirecek — tam gizlilikle",
+  "quiz_send_name_ph": "Adınız",
+  "quiz_send_phone_ph": "WhatsApp Numarası",
+  "quiz_send_btn": "📨 Tanıyı Dr. Sarah'a Gönder",
+  "quiz_trust_halal": "☪️ 100% Helal",
+  "quiz_trust_natural": "🌿 Doğal",
+  "quiz_trust_secret": "🔒 Tam Gizlilik"
 }
