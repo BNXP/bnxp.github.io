@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // SECURITY NOTE: The bot token below is visible in client-side code.
   // For a production site handling real patient data, use a serverless proxy.
   // Replace YOUR_BOT_TOKEN and YOUR_CHAT_ID after following the Telegram setup tutorial.
-  const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN';
-  const TELEGRAM_CHAT_ID   = 'YOUR_CHAT_ID';
+  const TELEGRAM_BOT_TOKEN = '8774208676:AAF4fmYVHXTK3lLIIggBqNBi6FI4pVkTnuI';
+  const TELEGRAM_CHAT_ID   = '8758562396';
 
   const form = document.getElementById('appointmentForm');
   if (form) {
