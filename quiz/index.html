@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title data-i18n="quiz_header_title">تشخيص مجاني — د. سارة | 60 ثانية لمعرفة سبب مشكلتك</title>
-<meta name="description" content="تشخيص مجاني عبر 7 أسئلة سريعة لتحديد سبب سرعة القذف أو ضعف الانتصاب أو صغر الحجم — مع د. سارة جونسون، خبيرة صحة الرجل من نظام جونز هوبكنز."/>
+<meta name="description" data-i18n-attr="content:quiz_meta_desc" content="تشخيص مجاني عبر 7 أسئلة سريعة لتحديد سبب سرعة القذف أو ضعف الانتصاب أو صغر الحجم — مع د. سارة جونسون، خبيرة صحة الرجل من نظام جونز هوبكنز."/>
 <link rel="canonical" href="https://drsarah-clinic.com/quiz/"/>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <script src="../js/lang.js"></script>
@@ -652,8 +652,8 @@ body::before {
 </main>
 
 <footer class="quiz-footer">
-  <a href="../index.html" class="footer-home-link">🏠 العودة للصفحة الرئيسية</a>
-  <p>© 2026 د. سارة جونسون · <a href="../index.html" data-i18n="quiz_footer_site">الموقع الرئيسي</a> · <span data-i18n="quiz_footer_privacy">سرية تامة</span></p>
+  <a href="../index.html" class="footer-home-link" data-i18n="quiz_footer_home">🏠 العودة للصفحة الرئيسية</a>
+  <p>© 2026 <span data-i18n="quiz_logo_text">د. سارة</span> · <a href="../index.html" data-i18n="quiz_footer_site">الموقع الرئيسي</a> · <span data-i18n="quiz_footer_privacy">سرية تامة</span></p>
 </footer>
 
 <script>
@@ -847,7 +847,41 @@ function t(key, vars) {
       'quiz_treatment_advanced_p2': 'المرحلة 2 (أيام 13–30): تحفيز هرموني وتحسين الأداء',
       'quiz_result_your_condition': 'حالتك تندرج تحت <strong>{severity}</strong>.',
       'quiz_rec_duration_value': '30 يوماً',
-      'quiz_rec_duration_extendable': '30 يوماً (قابلة للتمديد حسب التقدم)'
+      'quiz_rec_duration_extendable': '30 يوماً (قابلة للتمديد حسب التقدم)',
+      'quiz_logo_text': 'د. سارة',
+      'quiz_home_btn': '🏠 العودة للرئيسية',
+      'quiz_footer_home': '🏠 العودة للصفحة الرئيسية',
+      'quiz_alert_name_required': 'الرجاء إدخال اسم الماسنجر',
+      'quiz_sending': 'جاري الإرسال...',
+      'quiz_send_success_btn': '✅ تم الإرسال — د. سارة ستتواصل معك',
+      'quiz_send_error_alert': 'فشل الإرسال. الرجاء التواصل مباشرة عبر الواتساب.',
+      'quiz_telegram_greeting': 'السلام عليكم د. سارة،\n',
+      'quiz_telegram_intro': 'أجريت التشخيص المجاني على موقعكم.\n',
+      'quiz_telegram_result': 'النتيجة: {diagnosis}\n',
+      'quiz_telegram_severity': 'الشدة: {severity}\n',
+      'quiz_telegram_age': 'عمري: {age}\n',
+      'quiz_telegram_request': 'أرغب في معرفة خطة العلاج المفصلة والباقة المناسبة لحالتي.',
+      'quiz_summary_header': '*تشخيصي من موقع د. سارة*\n\n',
+      'quiz_summary_diagnosis': '📌 {diagnosis}\n',
+      'quiz_summary_severity': '⚠️ الشدة: {severity}\n',
+      'quiz_summary_age': '👤 العمر: {age}\n',
+      'quiz_summary_causes': '📝 الأسباب المؤكدة: {causes}\n\n',
+      'quiz_summary_request': 'أرغب في معرفة الخطة العلاجية المناسبة لحالتي.',
+      'quiz_feature_pe_basic': 'تركيبة مخصصة لسرعة القذف — إعادة توازن السيروتونين',
+      'quiz_feature_pe_pro': 'علاج مكثف لسرعة القذف — إصلاح النسيج الكافيورنوسي والسيطرة العصبية',
+      'quiz_feature_ed_basic': 'تركيبة لتحسين تدفق الدم — تعزيز أكسيد النيتريك الطبيعي',
+      'quiz_feature_ed_pro': 'إصلاح الأوعية الدموية + استعادة الإشارات العصبية بشكل كامل',
+      'quiz_feature_size_basic': 'تركيبة لدعم مستوى التستوستيرون الطبيعي',
+      'quiz_feature_size_pro': 'تحفيز نمو الأنسجة الكافيورنوسية + تدفق دموي مُحسّن',
+      'quiz_feature_general_basic': 'تركيبة عامة لدعم الصحة الجنسية والطاقة',
+      'quiz_feature_general_pro': 'برنامج شامل لجميع المشاكل الجنسية المركبة',
+      'quiz_feature_followup': 'متابعة يومية عبر واتساب مع د. سارة',
+      'quiz_feature_shipping': 'شحن سري ومجاني — الدفع عند الاستلام',
+      'quiz_feature_guarantee': 'ضمان استرداد كامل 90 يوم',
+      'quiz_feature_vip_shipping': 'شحن VIP مجاني — تغليف سري 100%',
+      'quiz_feature_chronic': 'تعديلات خاصة للحالات المزمنة (سكري / ضغط / بروستاتا)',
+      'quiz_feature_repair': 'برنامج إصلاحي مُسرّع للتلف النسيجي',
+      'quiz_feature_cream': 'كريم تدليك طبيعي + تمارين كيجل وتمارين تمدد مخصصة'
     };
     text = fallbacks[key] || key;
   }
@@ -950,9 +984,9 @@ function renderStep() {
       <div class="quiz-top-bar">
         <a href="../index.html" class="quiz-logo-mini">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          د. سارة
+          ${t('quiz_logo_text')}
         </a>
-        <a href="../index.html" class="quiz-home-btn">🏠 العودة للرئيسية</a>
+        <a href="../index.html" class="quiz-home-btn">${t('quiz_home_btn')}</a>
       </div>
       <div class="step-title"><span class="step-num">${currentStep + 1}</span>${data.title}</div>
       <div class="step-question">${data.question}</div>
@@ -1194,13 +1228,14 @@ function renderResult() {
     treatmentPhases = [t('quiz_treatment_advanced_p1'), t('quiz_treatment_advanced_p2')];
   }
 
+  const cleanDiagnosis = diagnosisTitle.replace(/^(Diagnosis: |تشخيص: )/, '');
   const msgText = encodeURIComponent(
-    `السلام عليكم د. سارة،\n` +
-    `أجريت التشخيص المجاني على موقعكم.\n` +
-    `النتيجة: ${diagnosisTitle.replace('تشخيص: ', '')}\n` +
-    `الشدة: ${severity}\n` +
-    `عمري: ${age}\n` +
-    `أرغب في معرفة خطة العلاج المفصلة والباقة المناسبة لحالتي.`
+    t('quiz_telegram_greeting') +
+    t('quiz_telegram_intro') +
+    t('quiz_telegram_result', { diagnosis: cleanDiagnosis }) +
+    t('quiz_telegram_severity', { severity }) +
+    t('quiz_telegram_age', { age }) +
+    t('quiz_telegram_request')
   );
 
   const severityColor = severityLevel >= 3 ? '#dc2626' : severityLevel === 2 ? '#d97706' : '#0e6149';
@@ -1210,36 +1245,36 @@ function renderResult() {
   const proFeatures = [];
 
   if (hasPE) {
-    basicFeatures.push('تركيبة مخصصة لسرعة القذف — إعادة توازن السيروتونين');
-    proFeatures.push('علاج مكثف لسرعة القذف — إصلاح النسيج الكافيورنوسي والسيطرة العصبية');
+    basicFeatures.push(t('quiz_feature_pe_basic'));
+    proFeatures.push(t('quiz_feature_pe_pro'));
   }
   if (hasED) {
-    basicFeatures.push('تركيبة لتحسين تدفق الدم — تعزيز أكسيد النيتريك الطبيعي');
-    proFeatures.push('إصلاح الأوعية الدموية + استعادة الإشارات العصبية بشكل كامل');
+    basicFeatures.push(t('quiz_feature_ed_basic'));
+    proFeatures.push(t('quiz_feature_ed_pro'));
   }
   if (hasSize) {
-    basicFeatures.push('تركيبة لدعم مستوى التستوستيرون الطبيعي');
-    proFeatures.push('تحفيز نمو الأنسجة الكافيورنوسية + تدفق دموي مُحسّن');
+    basicFeatures.push(t('quiz_feature_size_basic'));
+    proFeatures.push(t('quiz_feature_size_pro'));
   }
   if (!hasPE && !hasED && !hasSize) {
-    basicFeatures.push('تركيبة عامة لدعم الصحة الجنسية والطاقة');
-    proFeatures.push('برنامج شامل لجميع المشاكل الجنسية المركبة');
+    basicFeatures.push(t('quiz_feature_general_basic'));
+    proFeatures.push(t('quiz_feature_general_pro'));
   }
 
-  basicFeatures.push('متابعة يومية عبر واتساب مع د. سارة');
-  basicFeatures.push('شحن سري ومجاني — الدفع عند الاستلام');
-  basicFeatures.push('ضمان استرداد كامل 90 يوم');
+  basicFeatures.push(t('quiz_feature_followup'));
+  basicFeatures.push(t('quiz_feature_shipping'));
+  basicFeatures.push(t('quiz_feature_guarantee'));
 
-  proFeatures.push('متابعة يومية شخصية مع د. سارة عبر واتساب');
-  proFeatures.push('شحن VIP مجاني — تغليف سري 100%');
+  proFeatures.push(t('quiz_feature_followup'));
+  proFeatures.push(t('quiz_feature_vip_shipping'));
   if (health.length > 0) {
-    proFeatures.push('تعديلات خاصة للحالات المزمنة (سكري / ضغط / بروستاتا)');
+    proFeatures.push(t('quiz_feature_chronic'));
   }
   if (habits.includes('daily') || habits.includes('weekly')) {
-    proFeatures.push('برنامج إصلاحي مُسرّع للتلف النسيجي');
+    proFeatures.push(t('quiz_feature_repair'));
   }
-  proFeatures.push('كريم تدليك طبيعي + تمارين كيجل وتمارين تمدد مخصصة');
-  proFeatures.push('ضمان استرداد كامل 90 يوم');
+  proFeatures.push(t('quiz_feature_cream'));
+  proFeatures.push(t('quiz_feature_guarantee'));
 
   const isBasicRec = (hasPE && !hasED && !hasSize && health.length === 0 && !habits.includes('daily') && severityLevel <= 1);
   const basicRecClass = isBasicRec ? 'recommended' : '';
@@ -1275,12 +1310,12 @@ function renderResult() {
   `;
 
   const diagnosisSummary = encodeURIComponent(
-    `*تشخيصي من موقع د. سارة*\n\n` +
-    `📌 ${diagnosisTitle.replace('تشخيص: ', '')}\n` +
-    `⚠️ الشدة: ${severity}\n` +
-    `👤 العمر: ${age}\n` +
-    `📝 الأسباب المؤكدة: ${causes.join('، ')}\n\n` +
-    `أرغب في معرفة الخطة العلاجية المناسبة لحالتي.`
+    t('quiz_summary_header') +
+    t('quiz_summary_diagnosis', { diagnosis: cleanDiagnosis }) +
+    t('quiz_summary_severity', { severity }) +
+    t('quiz_summary_age', { age }) +
+    t('quiz_summary_causes', { causes: causes.join('، ') }) +
+    t('quiz_summary_request')
   );
 
   const sendToSarahHtml = `
@@ -1311,9 +1346,9 @@ function renderResult() {
       <div class="quiz-top-bar">
         <a href="../index.html" class="quiz-logo-mini">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          د. سارة
+          ${t('quiz_logo_text')}
         </a>
-        <a href="../index.html" class="quiz-home-btn">🏠 العودة للرئيسية</a>
+        <a href="../index.html" class="quiz-home-btn">${t('quiz_home_btn')}</a>
       </div>
       <div class="result-icon">✅</div>
       <h2 class="result-title">${t('quiz_result_title')}</h2>
@@ -1382,7 +1417,7 @@ function sendDiagnosisToSarah(e) {
   const phone = form.querySelector('[name="sendPhone"]').value.trim();
 
   if (!name) {
-    alert('الرجاء إدخال اسم الماسنجر');
+    alert(t('quiz_alert_name_required'));
     return;
   }
 
@@ -1477,7 +1512,7 @@ function sendDiagnosisToSarah(e) {
     `⏰ 提交时间: ${new Date().toLocaleString('zh-CN')}`;
 
   btn.disabled = true;
-  btn.textContent = 'جاري الإرسال...';
+  btn.textContent = t('quiz_sending');
 
   const TELEGRAM_BOT_TOKEN = '8774208676:AAF4fmYVHXTK3lLIIggBqNBi6FI4pVkTnuI';
   const TELEGRAM_CHAT_ID   = '8758562396';
@@ -1494,7 +1529,7 @@ function sendDiagnosisToSarah(e) {
   .then(r => r.json())
   .then(result => {
     if (result.ok) {
-      btn.textContent = '✅ تم الإرسال — د. سارة ستتواصل معك';
+      btn.textContent = t('quiz_send_success_btn');
       form.reset();
       setTimeout(() => { btn.disabled = false; btn.textContent = originalText; }, 4000);
     } else {
@@ -1505,7 +1540,7 @@ function sendDiagnosisToSarah(e) {
     console.error('Send failed:', err);
     btn.disabled = false;
     btn.textContent = originalText;
-    alert('فشل الإرسال. الرجاء التواصل مباشرة عبر الواتساب.');
+    alert(t('quiz_send_error_alert'));
   });
 }
 

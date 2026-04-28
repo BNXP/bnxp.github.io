@@ -116,7 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = form.querySelector('[name="message"]').value.trim();
 
       if (!name || !phone || !topic) {
-        alert('الرجاء ملء جميع الحقول المطلوبة');
+        const msg = (window.currentTranslations && window.currentTranslations.form_alert_required) || 'الرجاء ملء جميع الحقول المطلوبة';
+        alert(msg);
         return;
       }
 
@@ -140,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
       text += `\n⏰ 提交时间: ${new Date().toLocaleString('zh-CN')}`;
 
       btn.disabled = true;
-      btn.textContent = 'جاري الإرسال...';
+      btn.textContent = (window.currentTranslations && window.currentTranslations.form_sending) || 'جاري الإرسال...';
 
       try {
         const resp = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -151,11 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const result = await resp.json();
         if (!result.ok) throw new Error(result.description);
 
-        btn.textContent = '✓ تم الإرسال — سنتواصل معك قريباً';
+        btn.textContent = (window.currentTranslations && window.currentTranslations.form_sent) || '✓ تم الإرسال — سنتواصل معك قريباً';
         form.reset();
       } catch (err) {
         console.error('Telegram error:', err);
-        alert('فشل الإرسال. الرجاء التواصل مباشرة عبر واتساب.');
+        const errMsg = (window.currentTranslations && window.currentTranslations.form_send_error) || 'فشل الإرسال. الرجاء التواصل مباشرة عبر واتساب.';
+        alert(errMsg);
       } finally {
         setTimeout(() => { btn.disabled = false; btn.textContent = original; }, 3500);
       }

@@ -73,12 +73,13 @@ function getLocalePrefix() {
   if (path.includes('/treatments/erectile-dysfunction')) return 'treatments/ed/';
   if (path.includes('/treatments/penis-enlargement')) return 'treatments/enlargement/';
   if (path.includes('/quiz/')) return 'quiz/';
+  if (path.includes('/products/')) return 'products/';
   return '';
 }
 
 function getLocaleBasePath() {
   const path = window.location.pathname;
-  if (path.includes('/crisis/') || path.includes('/treatments/') || path.includes('/quiz/')) return '../locales/';
+  if (path.includes('/crisis/') || path.includes('/treatments/') || path.includes('/quiz/') || path.includes('/products/')) return '../locales/';
   return 'locales/';
 }
 

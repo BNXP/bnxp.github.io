@@ -8,7 +8,6 @@
   "quiz_prev": "← Previous",
   "quiz_footer_site": "Main Site",
   "quiz_footer_privacy": "Total Privacy",
-
   "quiz_result_title": "Your Condition Has Been Identified",
   "quiz_result_subtitle": "Here is your diagnosis summary based on your answers. This analysis is prepared by our system based on Johns Hopkins protocols.",
   "quiz_urgency_title": "⚠️ Condition Requires Immediate Attention",
@@ -28,21 +27,17 @@
   "quiz_result_desc": "Dr. Sarah will discuss this diagnosis with you in detail, answer your questions, and then prepare <strong>your custom formula</strong> and the right dosage for your body.<br/><strong style=\"color: var(--primary);\">The consultation is completely free — treatment begins after an accurate diagnosis.</strong>",
   "quiz_privacy_note": "🔒 All your information remains completely confidential — we do not store it on our server",
   "quiz_multi_select_hint": "You can select multiple options",
-
   "quiz_diag_pe": "Diagnosis: Premature Ejaculation",
   "quiz_diag_ed": "Diagnosis: Erectile Dysfunction",
   "quiz_diag_size": "Diagnosis: Size Concern + Performance Improvement",
   "quiz_diag_complex": "Diagnosis: Complex Sexual Issues (Multiple Symptoms)",
-
   "quiz_severity_mild": "Mild",
   "quiz_severity_moderate": "Moderate",
   "quiz_severity_moderate_severe": "Moderate to Severe",
   "quiz_severity_severe": "Severe",
-
   "quiz_package_basic": "Basic",
   "quiz_package_comprehensive": "Comprehensive",
   "quiz_package_advanced": "Advanced",
-
   "quiz_step_condition_title": "Main Problem",
   "quiz_step_condition_question": "What problem is affecting your sexual life right now?",
   "quiz_step_condition_subtitle": "You can choose more than one, but let's start with the most important.",
@@ -50,7 +45,6 @@
   "quiz_step_condition_opt1": "Erectile Dysfunction — Erection doesn't complete or last",
   "quiz_step_condition_opt2": "Small Size — I feel my size is insufficient",
   "quiz_step_condition_opt3": "I suffer from all three problems together",
-
   "quiz_step_age_title": "Age",
   "quiz_step_age_question": "How old are you currently?",
   "quiz_step_age_subtitle": "Age helps us understand your hormonal status better.",
@@ -59,7 +53,6 @@
   "quiz_step_age_opt2": "36 — 45 years",
   "quiz_step_age_opt3": "46 — 55 years",
   "quiz_step_age_opt4": "More than 55 years",
-
   "quiz_step_health_title": "Health Condition",
   "quiz_step_health_question": "Do you suffer from any of the following health conditions?",
   "quiz_step_health_subtitle": "This is very important — because some diseases directly affect sexual performance.",
@@ -68,7 +61,6 @@
   "quiz_step_health_opt2": "High Blood Pressure",
   "quiz_step_health_opt3": "Depression or Chronic Anxiety",
   "quiz_step_health_opt4": "I don't suffer from any of them",
-
   "quiz_step_habits_title": "Habits",
   "quiz_step_habits_question": "Do you masturbate frequently?",
   "quiz_step_habits_subtitle": "We know this question is personal — but it's essential to diagnose the real cause.",
@@ -76,7 +68,6 @@
   "quiz_step_habits_opt1": "Yes, a few times a week",
   "quiz_step_habits_opt2": "Very rarely",
   "quiz_step_habits_opt3": "I never do it",
-
   "quiz_step_lifestyle_title": "Lifestyle",
   "quiz_step_lifestyle_question": "How would you describe your current lifestyle?",
   "quiz_step_lifestyle_subtitle": "Choose what applies to you the most.",
@@ -85,7 +76,6 @@
   "quiz_step_lifestyle_opt2": "Sedentary / No exercise",
   "quiz_step_lifestyle_opt3": "I smoke or drink alcohol",
   "quiz_step_lifestyle_opt4": "Generally healthy lifestyle",
-
   "quiz_step_goal_title": "Goal",
   "quiz_step_goal_question": "What is the most important goal for you?",
   "quiz_step_goal_subtitle": "We will focus our treatment on the priority you choose.",
@@ -94,7 +84,6 @@
   "quiz_step_goal_opt2": "Increase size and length",
   "quiz_step_goal_opt3": "Restore overall confidence",
   "quiz_step_goal_opt4": "All of the above — I want a comprehensive solution",
-
   "quiz_step_symptom_title": "Condition Details",
   "quiz_step_symptom_pe_question": "Excluding foreplay — how long does intercourse currently last?",
   "quiz_step_symptom_pe_subtitle": "The actual time from penetration to ejaculation.",
@@ -103,7 +92,6 @@
   "quiz_step_symptom_pe_opt2": "3 — 5 minutes",
   "quiz_step_symptom_pe_opt3": "5 — 10 minutes",
   "quiz_step_symptom_pe_opt4": "More than 10 minutes",
-
   "quiz_step_symptom_ed_question": "How would you describe your current erection condition?",
   "quiz_step_symptom_ed_subtitle": "Choose the description closest to your condition.",
   "quiz_step_symptom_ed_opt0": "Almost no erection occurs",
@@ -111,7 +99,6 @@
   "quiz_step_symptom_ed_opt2": "Intermittent erection — weakens during intercourse",
   "quiz_step_symptom_ed_opt3": "Morning erection only",
   "quiz_step_symptom_ed_opt4": "Erection exists but not as I wish",
-
   "quiz_step_symptom_size_question": "What is your penis length when erect currently (approximately in inches)?",
   "quiz_step_symptom_size_subtitle": "This is completely confidential — this information will not be shared with anyone.",
   "quiz_step_symptom_size_opt0": "Less than 4 inches (10 cm)",
@@ -119,7 +106,6 @@
   "quiz_step_symptom_size_opt2": "5 — 6 inches (13 — 15 cm)",
   "quiz_step_symptom_size_opt3": "6 — 7 inches (15 — 18 cm)",
   "quiz_step_symptom_size_opt4": "More than 7 inches (18 cm+)",
-
   "quiz_step_symptom_default_question": "How long does intercourse currently last?",
   "quiz_step_symptom_default_subtitle": "",
   "quiz_step_symptom_default_opt0": "Less than a minute",
@@ -127,7 +113,6 @@
   "quiz_step_symptom_default_opt2": "3 — 5 minutes",
   "quiz_step_symptom_default_opt3": "5 — 10 minutes",
   "quiz_step_symptom_default_opt4": "More than 10 minutes",
-
   "quiz_mechanism_pe_serotonin_low": "Serotonin level is significantly low (5-HT < 150 ng/mL) — this hormone is responsible for controlling ejaculation",
   "quiz_mechanism_pe_cc_weak": "The corpus cavernosum is weak — cannot retain blood for a sufficient period",
   "quiz_mechanism_pe_sensitivity": "Excessive sensitivity in the glans due to weak vascular walls",
@@ -148,7 +133,6 @@
   "quiz_mechanism_sedentary": "Lack of movement causes visceral fat accumulation — every 5-point increase in body fat = 50 ng/mL decrease in testosterone",
   "quiz_mechanism_smoke": "Nicotine narrows blood vessels by 25% and reduces oxygen reaching genital organs",
   "quiz_mechanism_default": "The body needs support with natural ingredients to stimulate production of essential hormones",
-
   "quiz_cause_pe_serotonin": "Serotonin deficiency in the central nervous system",
   "quiz_cause_pe_sensitivity": "Excessive nerve sensitivity + weak corpus cavernosum wall",
   "quiz_cause_pe_tissue": "Tissue damage in corpus cavernosum (CC damage)",
@@ -165,7 +149,6 @@
   "quiz_cause_sedentary": "Lack of physical activity + visceral fat accumulation",
   "quiz_cause_smoke": "Vascular narrowing from smoking",
   "quiz_cause_default": "Deficiency in serotonin and testosterone levels — the most common causes",
-
   "quiz_risk_pe_ed_progression": "Without treatment: 85% of cases progress to erectile dysfunction within 12–24 months",
   "quiz_risk_pe_marriage": "The marital relationship deteriorates — 60% of women lose interest after 6 months of dissatisfaction",
   "quiz_risk_ed_heart": "Chronic erectile dysfunction increases risk of heart and cardiovascular diseases by 70%",
@@ -173,20 +156,17 @@
   "quiz_risk_size_confidence": "Chronic size concern is linked to 45% decrease in self-confidence and depression",
   "quiz_risk_diabetes_worsen": "Uncontrolled diabetes worsens the problem by 3–4 times",
   "quiz_risk_prostate_complication": "Neglected prostate diseases lead to chronic complications in the urinary and reproductive systems",
-
   "quiz_treatment_basic_p1": "Phase 1 (Days 1–10): Repair corpus cavernosum tissue — L-Arginine + Citrulline + Zinc",
   "quiz_treatment_basic_p2": "Phase 2 (Days 11–30): Activate serotonin and nerve control — Tongkat Ali + Korean Ginseng + Magnesium",
   "quiz_treatment_comprehensive_p1": "Phase 1 (Days 1–15): Repair tissues and vessels — VEGF + FGF + L-Arginine + Omega-3 + B12",
   "quiz_treatment_comprehensive_p2": "Phase 2 (Days 16–30): Hormonal activation and growth — DHT precursors + Tongkat Ali + Ginseng + Zinc + Magnesium",
   "quiz_treatment_advanced_p1": "Phase 1 (Days 1–12): Vascular and nerve repair — L-Arginine + Citrulline + B12",
   "quiz_treatment_advanced_p2": "Phase 2 (Days 13–30): Hormonal stimulation and performance improvement — Tongkat Ali + Ginseng + Zinc",
-
   "quiz_result_your_condition": "Your condition falls under <strong>{severity}</strong>. This means the real cause requires custom treatment — not a ready-made product from the pharmacy.",
   "quiz_rec_duration_value": "30 days",
   "quiz_rec_duration_extendable": "30 days (extendable based on progress)",
   "quiz_years_label": "years",
   "quiz_months_label": "months",
-
   "quiz_selector_title": "Based on your diagnosis, choose the right plan",
   "quiz_selector_subtitle": "Every plan is custom-made — not generic pills",
   "quiz_plan_basic_name": "Basic Program",
@@ -204,5 +184,40 @@
   "quiz_send_btn": "📨 Send Diagnosis to Dr. Sarah",
   "quiz_trust_halal": "☪️ 100% Halal",
   "quiz_trust_natural": "🌿 Natural",
-  "quiz_trust_secret": "🔒 Fully Confidential"
+  "quiz_trust_secret": "🔒 Fully Confidential",
+  "quiz_logo_text": "Dr. Sarah",
+  "quiz_home_btn": "🏠 Back to Home",
+  "quiz_footer_home": "🏠 Back to Homepage",
+  "quiz_alert_name_required": "Please enter your Messenger name",
+  "quiz_sending": "Sending...",
+  "quiz_send_success_btn": "✅ Sent — Dr. Sarah will contact you",
+  "quiz_send_error_alert": "Failed to send. Please contact us directly via WhatsApp.",
+  "quiz_telegram_greeting": "As-salamu alaykum Dr. Sarah,\n",
+  "quiz_telegram_intro": "I completed the free diagnosis on your website.\n",
+  "quiz_telegram_result": "Result: {diagnosis}\n",
+  "quiz_telegram_severity": "Severity: {severity}\n",
+  "quiz_telegram_age": "Age: {age}\n",
+  "quiz_telegram_request": "I would like to know the detailed treatment plan and suitable package for my condition.",
+  "quiz_summary_header": "*My Diagnosis from Dr. Sarah's Website*\n\n",
+  "quiz_summary_diagnosis": "📌 {diagnosis}\n",
+  "quiz_summary_severity": "⚠️ Severity: {severity}\n",
+  "quiz_summary_age": "👤 Age: {age}\n",
+  "quiz_summary_causes": "📝 Confirmed Root Causes: {causes}\n\n",
+  "quiz_summary_request": "I would like to know the suitable treatment plan for my condition.",
+  "quiz_feature_pe_basic": "Custom formula for premature ejaculation — serotonin rebalancing",
+  "quiz_feature_pe_pro": "Intensive PE treatment — cavernous tissue repair and nerve control",
+  "quiz_feature_ed_basic": "Formula to improve blood flow — boost natural nitric oxide",
+  "quiz_feature_ed_pro": "Vascular repair + full nerve signal restoration",
+  "quiz_feature_size_basic": "Formula to support natural testosterone levels",
+  "quiz_feature_size_pro": "Stimulate cavernous tissue growth + improved blood flow",
+  "quiz_feature_general_basic": "General formula for sexual health and energy support",
+  "quiz_feature_general_pro": "Comprehensive program for all complex sexual issues",
+  "quiz_feature_followup": "Daily follow-up with Dr. Sarah via WhatsApp",
+  "quiz_feature_shipping": "Fast free shipping — Cash on Delivery",
+  "quiz_feature_guarantee": "Full 90-day refund guarantee",
+  "quiz_feature_vip_shipping": "VIP free shipping — 100% discreet packaging",
+  "quiz_feature_chronic": "Special adjustments for chronic conditions (diabetes / pressure / prostate)",
+  "quiz_feature_repair": "Accelerated repair program for tissue damage",
+  "quiz_feature_cream": "Natural massage cream + Kegel & stretching exercises",
+  "quiz_meta_desc": "Free diagnosis via 7 quick questions to determine the cause of premature ejaculation, erectile dysfunction, or insufficient size — with Dr. Sarah Johnson, men's health expert from Johns Hopkins."
 }

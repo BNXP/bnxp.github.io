@@ -8,7 +8,6 @@
   "quiz_prev": "← Önceki",
   "quiz_footer_site": "Ana Sayfa",
   "quiz_footer_privacy": "Tam Gizlilik",
-
   "quiz_result_title": "Durumunuz Belirlendi",
   "quiz_result_subtitle": "İşte cevaplarınıza dayalı tanı özetiniz. Bu analiz, Johns Hopkins protokollerine dayalı olarak sistemimiz tarafından hazırlanmıştır.",
   "quiz_urgency_title": "⚠️ Durum Acil Dikkat Gerektiriyor",
@@ -28,21 +27,17 @@
   "quiz_result_desc": "Dr. Sarah bu tanıyı sizinle detaylı olarak tartışacak, sorularınızı yanıtlayacak ve ardından <strong>sizin özel formülünüzü</strong> ve vücudunuz için doğru dozu hazırlayacaktır.<br/><strong style=\"color: var(--primary);\">Danışmanlık tamamen ücretsizdir — tedavi, doğru tanı sonrası başlar.</strong>",
   "quiz_privacy_note": "🔒 Tüm bilgileriniz tamamen gizli kalır — sunucumuzda saklamıyoruz",
   "quiz_multi_select_hint": "Birden fazla seçenek seçebilirsiniz",
-
   "quiz_diag_pe": "Tanı: Erken Boşalma",
   "quiz_diag_ed": "Tanı: Ereksiyon Sorunu",
   "quiz_diag_size": "Tanı: Boyut Endişesi + Performans İyileştirme",
   "quiz_diag_complex": "Tanı: Kompleks Cinsel Sorunlar (Çoklu Belirtiler)",
-
   "quiz_severity_mild": "Hafif",
   "quiz_severity_moderate": "Orta",
   "quiz_severity_moderate_severe": "Orta Şiddetli",
   "quiz_severity_severe": "Ciddi",
-
   "quiz_package_basic": "Temel",
   "quiz_package_comprehensive": "Kapsamlı",
   "quiz_package_advanced": "Gelişmiş",
-
   "quiz_step_condition_title": "Ana Sorun",
   "quiz_step_condition_question": "Şu anda cinsel hayatınızı etkileyen sorun nedir?",
   "quiz_step_condition_subtitle": "Birden fazla seçebilirsiniz, ancak en önemliyle başlayalım.",
@@ -50,7 +45,6 @@
   "quiz_step_condition_opt1": "Ereksiyon Sorunu — Ereksiyon tam olmuyor veya sürmüyor",
   "quiz_step_condition_opt2": "Küçük Boyut — Boyutumun yetersiz olduğunu hissediyorum",
   "quiz_step_condition_opt3": "Üç sorundan da aynı anda muzdaribim",
-
   "quiz_step_age_title": "Yaş",
   "quiz_step_age_question": "Şu an kaç yaşındasınız?",
   "quiz_step_age_subtitle": "Yaş, hormonal durumunuzu daha iyi anlamamıza yardımcı olur.",
@@ -59,7 +53,6 @@
   "quiz_step_age_opt2": "36 — 45 yaş",
   "quiz_step_age_opt3": "46 — 55 yaş",
   "quiz_step_age_opt4": "55 yaş üstü",
-
   "quiz_step_health_title": "Sağlık Durumu",
   "quiz_step_health_question": "Aşağıdaki sağlık sorunlarından herhangi birinden muzdarip misiniz?",
   "quiz_step_health_subtitle": "Bu çok önemli — çünkü bazı hastalıklar cinsel performansı doğrudan etkiler.",
@@ -68,7 +61,6 @@
   "quiz_step_health_opt2": "Yüksek Tansiyon",
   "quiz_step_health_opt3": "Depresyon veya Kronik Anksiyete",
   "quiz_step_health_opt4": "Hiçbirinden muzdarip değilim",
-
   "quiz_step_habits_title": "Alışkanlıklar",
   "quiz_step_habits_question": "Sık sık mastürbasyon yapıyor musunuz?",
   "quiz_step_habits_subtitle": "Bu sorunun kişisel olduğunu biliyoruz — ancak gerçek nedeni teşhis etmek için esastır.",
@@ -76,7 +68,6 @@
   "quiz_step_habits_opt1": "Evet, haftada birkaç kez",
   "quiz_step_habits_opt2": "Çok nadiren",
   "quiz_step_habits_opt3": "Hiç yapmıyorum",
-
   "quiz_step_lifestyle_title": "Yaşam Tarzı",
   "quiz_step_lifestyle_question": "Mevcut yaşam tarzınızı nasıl tanımlarsınız?",
   "quiz_step_lifestyle_subtitle": "Size en çok uyanı seçin.",
@@ -85,7 +76,6 @@
   "quiz_step_lifestyle_opt2": "Hareketsiz / Egzersiz yok",
   "quiz_step_lifestyle_opt3": "Sigara içiyorum veya alkol kullanıyorum",
   "quiz_step_lifestyle_opt4": "Genel olarak sağlıklı yaşam tarzı",
-
   "quiz_step_goal_title": "Hedef",
   "quiz_step_goal_question": "Sizin için en önemli hedef nedir?",
   "quiz_step_goal_subtitle": "Tedavimizi seçtiğiniz önceliğe odaklayacağız.",
@@ -94,7 +84,6 @@
   "quiz_step_goal_opt2": "Boyut ve uzunluğu artırmak",
   "quiz_step_goal_opt3": "Genel özgüveni geri kazanmak",
   "quiz_step_goal_opt4": "Yukarıdakilerin tümü — Kapsamlı bir çözüm istiyorum",
-
   "quiz_step_symptom_title": "Durum Detayları",
   "quiz_step_symptom_pe_question": "Ön sevişme hariç — cinsel ilişki şu anda ne kadar sürüyor?",
   "quiz_step_symptom_pe_subtitle": "Penetrasyondan boşalmaya kadar olan gerçek süre.",
@@ -103,7 +92,6 @@
   "quiz_step_symptom_pe_opt2": "3 — 5 dakika",
   "quiz_step_symptom_pe_opt3": "5 — 10 dakika",
   "quiz_step_symptom_pe_opt4": "10 dakikadan fazla",
-
   "quiz_step_symptom_ed_question": "Mevcut ereksiyon durumunuzu nasıl tanımlarsınız?",
   "quiz_step_symptom_ed_subtitle": "Durumunuza en yakın tanımlamayı seçin.",
   "quiz_step_symptom_ed_opt0": "Neredeyse hiç ereksiyon olmuyor",
@@ -111,7 +99,6 @@
   "quiz_step_symptom_ed_opt2": "Aralıklı ereksiyon — ilişki sırasında zayıflıyor",
   "quiz_step_symptom_ed_opt3": "Sadece sabah ereksiyonu",
   "quiz_step_symptom_ed_opt4": "Ereksiyon var ama istediğim gibi değil",
-
   "quiz_step_symptom_size_question": "Ereksiyon halindeki penis uzunluğunuz şu anda yaklaşık kaç inç?",
   "quiz_step_symptom_size_subtitle": "Bu tamamen gizlidir — bu bilgi kimseyle paylaşılmayacaktır.",
   "quiz_step_symptom_size_opt0": "4 inçten az (10 cm)",
@@ -119,7 +106,6 @@
   "quiz_step_symptom_size_opt2": "5 — 6 inç (13 — 15 cm)",
   "quiz_step_symptom_size_opt3": "6 — 7 inç (15 — 18 cm)",
   "quiz_step_symptom_size_opt4": "7 inçten fazla (18 cm+)",
-
   "quiz_step_symptom_default_question": "Cinsel ilişki şu anda ne kadar sürüyor?",
   "quiz_step_symptom_default_subtitle": "",
   "quiz_step_symptom_default_opt0": "Bir dakikadan az",
@@ -127,7 +113,6 @@
   "quiz_step_symptom_default_opt2": "3 — 5 dakika",
   "quiz_step_symptom_default_opt3": "5 — 10 dakika",
   "quiz_step_symptom_default_opt4": "10 dakikadan fazla",
-
   "quiz_mechanism_pe_serotonin_low": "Serotonin seviyesi önemli ölçüde düşük (5-HT < 150 ng/mL) — bu hormon boşalmayı kontrol etmekten sorumlu",
   "quiz_mechanism_pe_cc_weak": "Korpus kavernozum zayıf — yeterli süre kan tutamaz",
   "quiz_mechanism_pe_sensitivity": "Zayıf damar duvarları nedeniyle glansta aşırı hassasiyet",
@@ -148,7 +133,6 @@
   "quiz_mechanism_sedentary": "Hareketsizlik, viseral yağ birikimine yol açar — vücut yağında her 5 puanlık artış = testosteronda 50 ng/mL düşüş",
   "quiz_mechanism_smoke": "Nikotin, kan damarlarını %25 daraltır ve genital organlara ulaşan oksijeni azaltır",
   "quiz_mechanism_default": "Vücut, temel hormonların üretimini uyarmak için doğal içeriklerle desteğe ihtiyaç duyar",
-
   "quiz_cause_pe_serotonin": "Merkezi sinir sisteminde serotonin eksikliği",
   "quiz_cause_pe_sensitivity": "Aşırı sinir hassasiyeti + zayıf korpus kavernozum duvarı",
   "quiz_cause_pe_tissue": "Korpus kavernozum dokusunda hasar (CC hasarı)",
@@ -165,7 +149,6 @@
   "quiz_cause_sedentary": "Fiziksel hareketsizlik + viseral yağ birikimi",
   "quiz_cause_smoke": "Sigaradan kaynaklanan damar daralması",
   "quiz_cause_default": "Serotonin ve testosteron seviyelerinde eksiklik — en yaygın nedenler",
-
   "quiz_risk_pe_ed_progression": "Tedavi olmadan: Vakaların %85'i 12–24 ay içinde ereksiyon sorununa ilerler",
   "quiz_risk_pe_marriage": "Evlilik ilişkisi bozulur — kadınların %60'ı 6 aylık memnuniyetsizlikten sonra ilgisini kaybeder",
   "quiz_risk_ed_heart": "Kronik ereksiyon sorunu, kalp ve kardiyovasküler hastalık riskini %70 artırır",
@@ -173,20 +156,17 @@
   "quiz_risk_size_confidence": "Kronik boyut endişesi, özgüvende %45 azalma ve depresyonla bağlantılıdır",
   "quiz_risk_diabetes_worsen": "Kontrolsüz diyabet, sorunu 3–4 kat kötüleştirir",
   "quiz_risk_prostate_complication": "İhmal edilen prostat hastalıkları, idrar ve üreme sistemlerinde kronik komplikasyonlara yol açar",
-
   "quiz_treatment_basic_p1": "Aşama 1 (Gün 1–10): Korpus kavernozum dokusunu onarın — L-Arjinin + Sitrülin + Çinko",
   "quiz_treatment_basic_p2": "Aşama 2 (Gün 11–30): Serotonini ve sinir kontrolünü aktive edin — Tongkat Ali + Kore Ginsengi + Magnezyum",
   "quiz_treatment_comprehensive_p1": "Aşama 1 (Gün 1–15): Dokuları ve damarları onarın — VEGF + FGF + L-Arjinin + Omega-3 + B12",
   "quiz_treatment_comprehensive_p2": "Aşama 2 (Gün 16–30): Hormonal aktivasyon ve büyüme — DHT öncülleri + Tongkat Ali + Ginseng + Çinko + Magnezyum",
   "quiz_treatment_advanced_p1": "Aşama 1 (Gün 1–12): Damar ve sinir onarımı — L-Arjinin + Sitrülin + B12",
   "quiz_treatment_advanced_p2": "Aşama 2 (Gün 13–30): Hormonal uyarım ve performans iyileştirme — Tongkat Ali + Ginseng + Çinko",
-
   "quiz_result_your_condition": "Durumunuz <strong>{severity}</strong> kapsamına giriyor. Bu, gerçek nedenin özel tedavi gerektirdiği anlamına gelir — eczaneden hazır bir ürün değil.",
   "quiz_rec_duration_value": "30 gün",
   "quiz_rec_duration_extendable": "30 gün (ilerlemeye göre uzatılabilir)",
   "quiz_years_label": "yıl",
   "quiz_months_label": "ay",
-
   "quiz_selector_title": "Tanınıza göre size uygun planı seçin",
   "quiz_selector_subtitle": "Her plan özel olarak hazırlanmıştır — genel haplar değil",
   "quiz_plan_basic_name": "Temel Program",
@@ -204,5 +184,6 @@
   "quiz_send_btn": "📨 Tanıyı Dr. Sarah'a Gönder",
   "quiz_trust_halal": "☪️ 100% Helal",
   "quiz_trust_natural": "🌿 Doğal",
-  "quiz_trust_secret": "🔒 Tam Gizlilik"
+  "quiz_trust_secret": "🔒 Tam Gizlilik",
+  "quiz_meta_desc": "Free diagnosis via 7 quick questions to determine the cause of premature ejaculation, erectile dysfunction, or insufficient size — with Dr. Sarah Johnson, men's health expert from Johns Hopkins."
 }
