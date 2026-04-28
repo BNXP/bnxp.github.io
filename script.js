@@ -96,21 +96,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealTargets.forEach(el => revealObserver.observe(el));
 
-  // ===== Contact form =====
+  // ===== Contact form → Telegram =====
+  // SECURITY NOTE: The bot token below is visible in client-side code.
+  // For a production site handling real patient data, use a serverless proxy.
+  // Replace YOUR_BOT_TOKEN and YOUR_CHAT_ID after following the Telegram setup tutorial.
+  const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN';
+  const TELEGRAM_CHAT_ID   = 'YOUR_CHAT_ID';
+
   const form = document.getElementById('appointmentForm');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const original = btn.textContent;
+
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      const topic = form.querySelector('[name="topic"]').value;
+      const message = form.querySelector('[name="message"]').value.trim();
+
+      if (!name || !phone || !topic) {
+        alert('الرجاء ملء جميع الحقول المطلوبة');
+        return;
+      }
+
+      const topicMap = {
+        pe: 'سرعة القذف',
+        ed: 'ضعف الانتصاب',
+        enlargement: 'تكبير القضيب',
+        all: 'المشاكل الثلاث معاً',
+        testosterone: 'التستوستيرون والطاقة',
+        inquiry: 'استفسار عن منتج/سعر'
+      };
+
+      let text = `📋 <b>طلب استشارة جديد</b>\n\n`;
+      text += `👤 <b>الماسنجر:</b> ${escapeHtml(name)}\n`;
+      text += `📱 <b>واتساب:</b> ${escapeHtml(phone)}\n`;
+      text += `📌 <b>المشكلة:</b> ${topicMap[topic] || topic}\n`;
+      if (message) text += `📝 <b>الوصف:</b> ${escapeHtml(message)}\n`;
+      text += `\n⏰ ${new Date().toLocaleString('ar-SA')}`;
+
       btn.disabled = true;
-      btn.textContent = '✓ تم الإرسال بنجاح — سنتواصل معك قريباً';
-      setTimeout(() => {
+      btn.textContent = 'جاري الإرسال...';
+
+      try {
+        const resp = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' })
+        });
+        const result = await resp.json();
+        if (!result.ok) throw new Error(result.description);
+
+        btn.textContent = '✓ تم الإرسال — سنتواصل معك قريباً';
         form.reset();
-        btn.disabled = false;
-        btn.textContent = original;
-      }, 3500);
+      } catch (err) {
+        console.error('Telegram error:', err);
+        alert('فشل الإرسال. الرجاء التواصل مباشرة عبر واتساب.');
+      } finally {
+        setTimeout(() => { btn.disabled = false; btn.textContent = original; }, 3500);
+      }
     });
+  }
+
+  function escapeHtml(text) {
+    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
   // ===== Certificate Lightbox =====
