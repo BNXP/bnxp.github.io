@@ -180,10 +180,18 @@
   "quiz_send_title": "Tanınızı Dr. Sarah'a Gönderin",
   "quiz_send_subtitle": "Dr. Sarah durumunuzu kişisel olarak inceleyecek ve size en uygun planı yönlendirecek — tam gizlilikle",
   "quiz_send_name_ph": "Your Name",
-  "quiz_send_phone_ph": "WhatsApp Numarası (İsteğe Bağlı)",
+  "quiz_send_phone_ph": "WhatsApp numarası",
   "quiz_send_btn": "📨 Tanıyı Dr. Sarah'a Gönder",
   "quiz_trust_halal": "☪️ 100% Helal",
   "quiz_trust_natural": "🌿 Doğal",
   "quiz_trust_secret": "🔒 Tam Gizlilik",
-  "quiz_meta_desc": "Free diagnosis via 7 quick questions to determine the cause of premature ejaculation, erectile dysfunction, or insufficient size — with Dr. Sarah Johnson, men's health expert from Johns Hopkins."
+  "quiz_meta_desc": "Free diagnosis via 7 quick questions to determine the cause of premature ejaculation, erectile dysfunction, or insufficient size — with Dr. Sarah Johnson, men's health expert from Johns Hopkins.",
+  "quiz_contact_title": "Bilgilerinizi Tamamlayın",
+  "quiz_contact_subtitle": "Tanı sonucunu görmek için Messenger adınızı ve WhatsApp numaranızı girin",
+  "quiz_contact_form_title": "İletişim Bilgileri",
+  "quiz_contact_form_sub": "Dr. Sarah tanıyı inceledikten sonra sizinle doğrudan iletişime geçecek",
+  "quiz_contact_name_ph": "Messenger kullanıcı adı",
+  "quiz_contact_phone_ph": "WhatsApp numarası",
+  "quiz_contact_submit": "Tanı Sonucunu Gör",
+  "quiz_contact_required": "Lütfen hem adınızı hem de WhatsApp numaranızı girin"
 }

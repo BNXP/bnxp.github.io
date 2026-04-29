@@ -180,7 +180,7 @@
   "quiz_send_title": "Send Your Diagnosis to Dr. Sarah",
   "quiz_send_subtitle": "Dr. Sarah will personally review your case and guide you to the best plan — with complete confidentiality",
   "quiz_send_name_ph": "Your Name",
-  "quiz_send_phone_ph": "WhatsApp Number (Optional)",
+  "quiz_send_phone_ph": "WhatsApp number",
   "quiz_send_btn": "📨 Send Diagnosis to Dr. Sarah",
   "quiz_trust_halal": "☪️ 100% Halal",
   "quiz_trust_natural": "🌿 Natural",
@@ -219,5 +219,13 @@
   "quiz_feature_chronic": "Special adjustments for chronic conditions (diabetes / pressure / prostate)",
   "quiz_feature_repair": "Accelerated repair program for tissue damage",
   "quiz_feature_cream": "Natural massage cream + Kegel & stretching exercises",
-  "quiz_meta_desc": "Free diagnosis via 7 quick questions to determine the cause of premature ejaculation, erectile dysfunction, or insufficient size — with Dr. Sarah Johnson, men's health expert from Johns Hopkins."
+  "quiz_meta_desc": "Free diagnosis via 7 quick questions to determine the cause of premature ejaculation, erectile dysfunction, or insufficient size — with Dr. Sarah Johnson, men's health expert from Johns Hopkins.",
+  "quiz_contact_title": "Complete Your Details",
+  "quiz_contact_subtitle": "Enter your Messenger name and WhatsApp number to view your diagnosis result",
+  "quiz_contact_form_title": "Contact Information",
+  "quiz_contact_form_sub": "Dr. Sarah will contact you directly after reviewing your diagnosis",
+  "quiz_contact_name_ph": "Messenger username",
+  "quiz_contact_phone_ph": "WhatsApp number",
+  "quiz_contact_submit": "View Diagnosis Result",
+  "quiz_contact_required": "Please enter both name and WhatsApp number"
 }

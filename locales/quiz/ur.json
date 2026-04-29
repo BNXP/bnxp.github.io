@@ -180,10 +180,18 @@
   "quiz_send_title": "اپنی تشخیص ڈاکٹر سارہ کو بھیجیں",
   "quiz_send_subtitle": "ڈاکٹر سارہ آپ کی حالت کا ذاتی جائزہ لیں گی اور آپ کو بہترین پلان کی ہدایت دیں گی — مکمل رازداری کے ساتھ",
   "quiz_send_name_ph": "الاسم الكريم",
-  "quiz_send_phone_ph": "واٹس ایپ نمبر (اختیاری)",
+  "quiz_send_phone_ph": "WhatsApp نمبر",
   "quiz_send_btn": "📨 تشخیص ڈاکٹر سارہ کو بھیجیں",
   "quiz_trust_halal": "☪️ 100% حلال",
   "quiz_trust_natural": "🌿 قدرتی",
   "quiz_trust_secret": "🔒 مکمل رازداری",
-  "quiz_meta_desc": "تشخيص مجاني عبر 7 أسئلة سريعة لتحديد سبب سرعة القذف أو ضعف الانتصاب أو صغر الحجم — مع د. سارة جونسون، خبيرة صحة الرجل من نظام جونز هوبكنز."
+  "quiz_meta_desc": "تشخيص مجاني عبر 7 أسئلة سريعة لتحديد سبب سرعة القذف أو ضعف الانتصاب أو صغر الحجم — مع د. سارة جونسون، خبيرة صحة الرجل من نظام جونز هوبكنز.",
+  "quiz_contact_title": "اپنی تفصیلات مکمل کریں",
+  "quiz_contact_subtitle": "تشخیص کا نتیجہ دیکھنے کے لیے اپنا Messenger نام اور WhatsApp نمبر درج کریں",
+  "quiz_contact_form_title": "رابطے کی معلومات",
+  "quiz_contact_form_sub": "ڈاکٹر سارہ تشخیص کا جائزہ لینے کے بعد آپ سے براہ راست رابطہ کریں گی",
+  "quiz_contact_name_ph": "Messenger صارف نام",
+  "quiz_contact_phone_ph": "WhatsApp نمبر",
+  "quiz_contact_submit": "تشخیص کا نتیجہ دیکھیں",
+  "quiz_contact_required": "براہ کرم نام اور WhatsApp نمبر دونوں درج کریں"
 }
