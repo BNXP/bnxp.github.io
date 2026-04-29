@@ -23,10 +23,11 @@
   --font-quran: 'Amiri','Noto Sans Arabic',serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
 body {
   font-family: var(--font-sans); color: var(--text-primary);
   background: var(--bg-primary); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; touch-action: manipulation;
 }
 .container { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
 
@@ -111,6 +112,7 @@ html[dir="ltr"] .step-title { flex-direction: row-reverse; }
   border: 2px solid var(--border-light); border-radius: var(--radius-md);
   cursor: pointer; font-family: inherit; font-size: 1rem; color: var(--text-primary);
   text-align: right; transition: all 0.2s ease; width: 100%;
+  user-select: none; -webkit-user-select: none;
 }
 html[dir="ltr"] .option-btn { text-align: left; flex-direction: row-reverse; }
 .option-btn:hover {
@@ -139,12 +141,15 @@ html[dir="ltr"] .option-btn:hover { transform: translateX(4px); }
   padding: 12px 28px; border-radius: var(--radius-full); font-family: inherit;
   font-size: 0.95rem; font-weight: 600; cursor: pointer; border: none;
   transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 8px;
+  user-select: none; -webkit-user-select: none;
 }
 .btn-primary { background: var(--primary); color: #fff; }
 .btn-primary:hover { background: var(--primary-dark); }
-.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 .btn-secondary { background: transparent; color: var(--text-muted); border: 1px solid var(--border-light); }
 .btn-secondary:hover { background: var(--bg-secondary); }
+.btn-secondary:active { transform: scale(0.98); }
 
 /* Result Page */
 .result-card { text-align: center; padding: 3rem 2rem; }
@@ -180,6 +185,7 @@ html[dir="ltr"] .recommendation { text-align: left; }
   padding: 16px 32px; border-radius: var(--radius-full); font-size: 1.05rem;
   font-weight: 700; text-decoration: none; box-shadow: 0 8px 24px rgba(0,102,204,0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease; margin-bottom: 1rem;
+  user-select: none; -webkit-user-select: none;
 }
 .messenger-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,102,204,0.4); }
 .messenger-cta svg { width: 24px; height: 24px; }
@@ -390,10 +396,13 @@ html[dir="ltr"] .sarah-form { text-align: left; }
   font-size: 0.95rem;
   background: #fff;
   color: var(--text-primary);
+  -webkit-appearance: none;
+  appearance: none;
 }
 .sarah-form input:focus {
   outline: none;
   border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(14,97,73,0.1);
 }
 .sarah-form .btn-send {
   padding: 14px 24px;
@@ -655,7 +664,7 @@ body::before {
   .send-fail-banner .send-fail-icon { font-size: 1.25rem; }
   .send-fail-banner .send-fail-text strong { font-size: 0.85rem; }
   .send-fail-banner .send-fail-text span { font-size: 0.78rem; }
-  .messenger-cta { padding: 14px 24px; font-size: 0.95rem; }
+  .messenger-cta { padding: 14px 20px; font-size: 0.95rem; width: 100%; justify-content: center; }
   .quiz-header h1 { font-size: 1.1rem; }
   .quiz-header p { font-size: 0.78rem; }
   .quiz-header .back-link { font-size: 0.7rem; padding: 4px 8px; }
@@ -664,6 +673,10 @@ body::before {
   .progress-text { font-size: 0.8rem; }
   .btn { padding: 10px 20px; font-size: 0.9rem; min-height: 44px; }
   .nav-btns { gap: 0.75rem; }
+  .option-btn:active { transform: scale(0.985); background: rgba(14,97,73,0.05); }
+  .plan-option-price { font-size: 1.35rem; }
+  .diagnosis-box ul { padding-right: 0.75rem; }
+  html[dir="ltr"] .diagnosis-box ul { padding-left: 0.75rem; }
 }
 </style>
 </head>
@@ -705,6 +718,8 @@ function t(key, vars) {
       'quiz_prev': '← السابق',
       'quiz_footer_site': 'الموقع الرئيسي',
       'quiz_footer_privacy': 'سرية تامة',
+      'quiz_footer_home': '🏠 العودة للصفحة الرئيسية',
+      'quiz_multi_select_hint': 'يمكنك اختيار أكثر من خيار',
       'quiz_result_title': 'تم تحديد حالتك بنجاح',
       'quiz_result_subtitle': 'إليك ملخص التشخيص بناءً على إجاباتك.',
       'quiz_urgency_title': '⚠️ حالة تتطلب اهتماماً فورياً',
