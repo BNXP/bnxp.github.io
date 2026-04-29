@@ -1358,6 +1358,9 @@ button { font-family: inherit; cursor: pointer; }
 [dir="ltr"] .footer-links a:hover { padding-right: 0; padding-left: 6px; }
 [dir="ltr"] .credential-item:hover { transform: translateX(-4px); }
 [dir="ltr"] .hopkins-badge { right: auto; left: 16px; }
+[dir="ltr"] .timeline-card li { padding-right: 0; padding-left: 16px; }
+[dir="ltr"] .timeline-card li::before { right: auto; left: 0; }
+[dir="ltr"] .timeline-note { border-right: none; border-left: 3px solid var(--primary); }
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
@@ -2077,12 +2080,51 @@ button { font-family: inherit; cursor: pointer; }
   .timeline-cards-row .timeline-card {
     flex: 0 0 85%; min-width: 280px; scroll-snap-align: start;
   }
-  .timeline-track { gap: var(--space-sm); }
+  .timeline-track {
+    gap: var(--space-sm);
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: var(--space-sm);
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .timeline-step {
+    flex: 0 0 auto;
+    min-width: 82px;
+    scroll-snap-align: start;
+  }
   .step-ring { width: 44px; height: 44px; }
   .step-num { font-size: 0.9rem; }
   .step-label { font-size: 0.78rem; }
   .step-range { font-size: 0.68rem; }
-  .timeline-connector { margin-top: 22px; min-width: 8px; }
+  .timeline-connector {
+    flex: 0 0 16px;
+    min-width: 16px;
+    margin-top: 22px;
+  }
+  .certificates-showcase {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    max-width: none;
+  }
+  .cert-item {
+    flex: 0 0 220px;
+    min-width: 220px;
+    max-width: none;
+    scroll-snap-align: start;
+    text-align: center;
+  }
+  .cert-desc {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    text-align: center;
+  }
   .guarantee-content h2 { font-size: 1.5rem; }
   .final-cta-wrapper h2 { font-size: 1.6rem; }
   .pricing-guarantee { flex-direction: column; text-align: center; }
@@ -2108,8 +2150,22 @@ button { font-family: inherit; cursor: pointer; }
   .credentials { padding: var(--space-lg); }
   .testimonial-card { flex: 0 0 250px; padding: var(--space-md); }
   .trust-grid { grid-template-columns: 1fr; }
-  .certificates-showcase { gap: var(--space-md); }
-  .cert-frame .cert-image { width: 56px; height: 56px; }
+  .certificates-showcase { gap: var(--space-sm); }
+  .cert-item { flex: 0 0 200px; min-width: 200px; }
+  .cert-frame { padding: var(--space-sm); }
+  .cert-frame .cert-image { width: 52px; height: 52px; }
+  .cert-label { font-size: 0.82rem; }
+  .cert-id { font-size: 0.68rem; }
+  .cert-valid { font-size: 0.68rem; }
+  .cert-desc { font-size: 0.72rem; }
+  .timeline-cards-row .timeline-card {
+    flex: 0 0 88%;
+    min-width: 260px;
+  }
+  .timeline-note {
+    padding: var(--space-md);
+    font-size: 0.88rem;
+  }
 }
 
 /* ----- Pricing Plans Section ----- */
