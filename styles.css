@@ -2099,8 +2099,8 @@ button { font-family: inherit; cursor: pointer; }
 /* ----- Responsive New Sections ----- */
 @media (max-width: 1024px) {
   .pain-grid, .badges-grid { grid-template-columns: repeat(2, 1fr); }
-  .solution-pillars { grid-template-columns: repeat(2, 1fr); }
-  .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+  .solution-pillars, .solution-pillars.two-col, .solution-pillars.three-col { grid-template-columns: repeat(2, 1fr); }
+  .timeline-grid, .timeline-grid.three-col { grid-template-columns: repeat(2, 1fr); }
   .timeline-cards-row { grid-template-columns: repeat(2, 1fr); }
   .certificates-showcase { gap: var(--space-md); }
   .letter-wrapper { grid-template-columns: 1fr; }
@@ -2110,7 +2110,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 768px) {
-  .pain-grid, .solution-pillars, .timeline-grid, .badges-grid { grid-template-columns: 1fr; }
+  .pain-grid, .solution-pillars, .solution-pillars.two-col, .solution-pillars.three-col, .timeline-grid, .timeline-grid.three-col, .badges-grid { grid-template-columns: 1fr; }
   .section-header h2 { font-size: 1.6rem; }
   .timeline-card, .pillar-card, .pain-card, .badge-card { padding: var(--space-xl); }
   .timeline-cards-row {
