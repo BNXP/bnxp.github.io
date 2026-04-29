@@ -1422,6 +1422,33 @@ button { font-family: inherit; cursor: pointer; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonial-card { flex: 0 0 280px; }
+  .testimonials-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-md);
+  }
+  .marquee-track {
+    animation: none;
+    width: auto;
+    flex-wrap: nowrap;
+  }
+  .marquee-track .testimonial-card {
+    flex: 0 0 85%;
+    min-width: 280px;
+    scroll-snap-align: start;
+  }
+  .testimonials-marquee::after {
+    content: '← 左右滑动查看更多 →';
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: var(--space-sm);
+    white-space: nowrap;
+  }
   .featured-image { height: 360px; }
   .featured-caption { right: 16px; left: 16px; bottom: 16px; padding: var(--space-md); max-width: none; }
   .bismillah-strip { font-size: 0.78rem; padding: 6px 12px; }
@@ -2156,6 +2183,10 @@ button { font-family: inherit; cursor: pointer; }
   .cod-cta, .contact-form-wrap { padding: var(--space-lg); }
   .credentials { padding: var(--space-lg); }
   .testimonial-card { flex: 0 0 250px; padding: var(--space-md); }
+  .marquee-track .testimonial-card {
+    flex: 0 0 88%;
+    min-width: 260px;
+  }
   .trust-grid { grid-template-columns: 1fr; }
   .certificates-showcase { gap: var(--space-sm); }
   .cert-item { flex: 0 0 200px; min-width: 200px; }
