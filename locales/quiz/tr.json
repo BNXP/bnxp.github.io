@@ -193,5 +193,7 @@
   "quiz_contact_name_ph": "Messenger kullanıcı adı",
   "quiz_contact_phone_ph": "WhatsApp numarası",
   "quiz_contact_submit": "Tanı Sonucunu Gör",
-  "quiz_contact_required": "Lütfen hem adınızı hem de WhatsApp numaranızı girin"
+  "quiz_contact_required": "Lütfen hem adınızı hem de WhatsApp numaranızı girin",
+  "quiz_send_fail_title": "Gönderilemedi",
+  "quiz_send_fail_text": "Tanı sonucunuz aşağıda gösterilmiştir. Tedavi planınızı almak için lütfen Dr. Sarah ile WhatsApp üzerinden iletişime geçin."
 }

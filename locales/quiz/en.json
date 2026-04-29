@@ -227,5 +227,7 @@
   "quiz_contact_name_ph": "Messenger username",
   "quiz_contact_phone_ph": "WhatsApp number",
   "quiz_contact_submit": "View Diagnosis Result",
-  "quiz_contact_required": "Please enter both name and WhatsApp number"
+  "quiz_contact_required": "Please enter both name and WhatsApp number",
+  "quiz_send_fail_title": "Could not send",
+  "quiz_send_fail_text": "Your diagnosis result is shown below. Please contact Dr. Sarah via WhatsApp to receive your treatment plan."
 }

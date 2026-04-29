@@ -227,5 +227,7 @@
   "quiz_contact_name_ph": "اسم حساب الماسنجر",
   "quiz_contact_phone_ph": "رقم واتساب",
   "quiz_contact_submit": "عرض نتيجة التشخيص",
-  "quiz_contact_required": "الرجاء إدخال الاسم ورقم الواتساب"
+  "quiz_contact_required": "الرجاء إدخال الاسم ورقم الواتساب",
+  "quiz_send_fail_title": "تعذر الإرسال",
+  "quiz_send_fail_text": "تم عرض نتيجة التشخيص. الرجاء التواصل مع د. سارة عبر واتساب لاستلام خطتك العلاجية."
 }

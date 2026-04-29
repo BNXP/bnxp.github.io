@@ -189,6 +189,24 @@ html[dir="ltr"] .recommendation { text-align: left; }
   justify-content: center; gap: 6px; margin-top: 1rem;
 }
 
+/* Send Fail Banner */
+.send-fail-banner {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1.5px solid #f59e0b;
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: right;
+}
+html[dir="ltr"] .send-fail-banner { text-align: left; flex-direction: row-reverse; }
+.send-fail-banner .send-fail-icon { font-size: 1.5rem; flex-shrink: 0; }
+.send-fail-banner .send-fail-text { display: flex; flex-direction: column; gap: 2px; }
+.send-fail-banner .send-fail-text strong { color: #92400e; font-size: 0.9rem; }
+.send-fail-banner .send-fail-text span { color: #a16207; font-size: 0.82rem; line-height: 1.5; }
+
 /* Footer */
 .quiz-footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: var(--text-muted); }
 .quiz-footer a { color: var(--primary); }
@@ -619,18 +637,33 @@ body::before {
 @media (max-width: 640px) {
   .plan-options { grid-template-columns: 1fr; }
   .plan-option { padding: 1rem; }
-  .islamic-frame { padding: 1.5rem 1rem; }
-  .sarah-section-title { font-size: 1rem; }
+  .islamic-frame { padding: 1.25rem 0.875rem; }
+  .sarah-section-title { font-size: 0.95rem; }
+  .sarah-section-sub { font-size: 0.82rem; }
+  .sarah-form input { padding: 14px 14px; font-size: 1rem; min-height: 48px; }
+  .sarah-form .btn-send { padding: 14px 20px; font-size: 1rem; min-height: 48px; }
   .quiz-card { padding: 1.25rem; min-height: auto; }
   .quiz-card::before { width: 28px; height: 28px; }
   .step-question { font-size: 1.05rem; }
-  .option-btn { padding: 1rem; font-size: 0.92rem; }
+  .option-btn { padding: 1rem; font-size: 0.92rem; min-height: 52px; }
   .option-btn .opt-letter { width: 28px; height: 28px; font-size: 0.85rem; }
   .result-title { font-size: 1.25rem; }
+  .result-subtitle { font-size: 0.92rem; }
+  .diagnosis-box { padding: 1rem; }
+  .recommendation { padding: 1rem; }
+  .send-fail-banner { padding: 0.75rem 0.875rem; }
+  .send-fail-banner .send-fail-icon { font-size: 1.25rem; }
+  .send-fail-banner .send-fail-text strong { font-size: 0.85rem; }
+  .send-fail-banner .send-fail-text span { font-size: 0.78rem; }
   .messenger-cta { padding: 14px 24px; font-size: 0.95rem; }
-  .quiz-header h1 { font-size: 1.15rem; }
-  .quiz-header .back-link { font-size: 0.75rem; padding: 4px 8px; }
+  .quiz-header h1 { font-size: 1.1rem; }
+  .quiz-header p { font-size: 0.78rem; }
+  .quiz-header .back-link { font-size: 0.7rem; padding: 4px 8px; }
   .quiz-top-bar { flex-wrap: wrap; gap: 0.5rem; }
+  .container { padding: 0 1rem; }
+  .progress-text { font-size: 0.8rem; }
+  .btn { padding: 10px 20px; font-size: 0.9rem; min-height: 44px; }
+  .nav-btns { gap: 0.75rem; }
 }
 </style>
 </head>
@@ -859,6 +892,8 @@ function t(key, vars) {
       'quiz_contact_phone_ph': 'رقم واتساب',
       'quiz_contact_submit': 'عرض نتيجة التشخيص',
       'quiz_contact_required': 'الرجاء إدخال الاسم ورقم الواتساب',
+      'quiz_send_fail_title': 'تعذر الإرسال',
+      'quiz_send_fail_text': 'تم عرض نتيجة التشخيص. الرجاء التواصل مع د. سارة عبر واتساب لاستلام خطتك العلاجية.',
       'quiz_alert_name_required': 'الرجاء إدخال اسم الماسنجر',
       'quiz_sending': 'جاري الإرسال...',
       'quiz_send_success_btn': '✅ تم الإرسال — د. سارة ستتواصل معك',
@@ -1140,9 +1175,8 @@ function submitContactAndShowResult(e) {
     })
     .catch(err => {
       console.error('Send failed:', err);
-      btn.disabled = false;
-      btn.textContent = originalText;
-      alert(t('quiz_send_error_alert'));
+      // Still show result even if Telegram fails (e.g. blocked in some regions)
+      renderResult({ sendFailed: true });
     });
 }
 
@@ -1257,7 +1291,7 @@ function sendQuizReportToTelegram(name, phone) {
   });
 }
 
-function renderResult() {
+function renderResult(opts = {}) {
   const card = document.getElementById('quizCard');
   document.getElementById('progressFill').style.width = '100%';
   document.getElementById('progressText').textContent = t('quiz_completed');
@@ -1553,6 +1587,16 @@ function renderResult() {
     </div>
   `;
 
+  const sendFailedBanner = opts.sendFailed ? `
+    <div class="send-fail-banner">
+      <div class="send-fail-icon">⚠️</div>
+      <div class="send-fail-text">
+        <strong>${t('quiz_send_fail_title')}</strong>
+        <span>${t('quiz_send_fail_text')}</span>
+      </div>
+    </div>
+  ` : '';
+
   let html = `
     <div class="result-card fade-in">
       <div class="quiz-top-bar">
@@ -1562,6 +1606,7 @@ function renderResult() {
         </a>
         <a href="../index.html" class="quiz-home-btn">${t('quiz_home_btn')}</a>
       </div>
+      ${sendFailedBanner}
       <div class="result-icon">✅</div>
       <h2 class="result-title">${t('quiz_result_title')}</h2>
       <p class="result-subtitle">${t('quiz_result_subtitle')}</p>

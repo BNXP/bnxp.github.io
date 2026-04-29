@@ -193,5 +193,7 @@
   "quiz_contact_name_ph": "Messenger صارف نام",
   "quiz_contact_phone_ph": "WhatsApp نمبر",
   "quiz_contact_submit": "تشخیص کا نتیجہ دیکھیں",
-  "quiz_contact_required": "براہ کرم نام اور WhatsApp نمبر دونوں درج کریں"
+  "quiz_contact_required": "براہ کرم نام اور WhatsApp نمبر دونوں درج کریں",
+  "quiz_send_fail_title": "بھیجنے میں ناکام",
+  "quiz_send_fail_text": "آپ کی تشخیص کا نتیجہ نیچے دکھایا گیا ہے۔ اپنا علاج کا منصوبہ حاصل کرنے کے لیے براہ کرم ڈاکٹر سارہ سے واٹس ایپ پر رابطہ کریں۔"
 }
