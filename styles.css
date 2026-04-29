@@ -1535,6 +1535,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 .pain-quote span { display: block; margin-top: var(--space-sm); color: var(--primary); font-weight: 600; font-size: 0.9rem; }
 
+/* ----- Utility Backgrounds ----- */
+.bg-primary { background: var(--bg-primary); }
+
 /* ----- Solution Intro ----- */
 .solution-intro { padding: var(--space-4xl) 0; background: var(--bg-secondary); }
 .solution-pillars {
@@ -1542,6 +1545,8 @@ button { font-family: inherit; cursor: pointer; }
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-lg);
 }
+.solution-pillars.two-col { grid-template-columns: repeat(2, 1fr); }
+.solution-pillars.three-col { grid-template-columns: repeat(3, 1fr); }
 .pillar-card {
   background: #fff;
   border-radius: var(--radius-lg);
@@ -2231,6 +2236,26 @@ button { font-family: inherit; cursor: pointer; }
     padding: var(--space-md);
     font-size: 0.88rem;
   }
+
+  /* Mobile typography improvements for sub-pages */
+  .pain-card { padding: var(--space-xl); }
+  .pain-card h3 { font-size: 1.15rem; }
+  .pain-card p { font-size: 0.92rem; line-height: 1.75; }
+  .pain-emoji { font-size: 2.2rem; }
+
+  .pillar-card { padding: var(--space-xl); }
+  .pillar-card h3 { font-size: 1.05rem; }
+  .pillar-card p { font-size: 0.9rem; line-height: 1.65; }
+  .pillar-num { width: 36px; height: 36px; font-size: 1rem; top: -14px; }
+
+  .section-subtitle { line-height: 1.6; font-size: 0.95rem; }
+
+  .faq-item summary { font-size: 0.95rem; padding: var(--space-md); }
+  .faq-item p { font-size: 0.9rem; line-height: 1.7; padding: 0 var(--space-md) var(--space-md); }
+
+  .final-cta-wrapper h2 { font-size: 1.45rem; }
+  .final-cta-wrapper p { font-size: 0.95rem; line-height: 1.65; }
+  .btn-xl { padding: 14px 24px; font-size: 1rem; }
 }
 
 /* ----- Pricing Plans Section ----- */
