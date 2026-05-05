@@ -193,4 +193,33 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ===== Story Lightbox =====
+  const storyLightbox = document.getElementById('storyLightbox');
+  const storyLightboxImg = document.getElementById('storyLightboxImg');
+  if (storyLightbox && storyLightboxImg) {
+    document.querySelectorAll('.story-img-wrap').forEach(wrap => {
+      wrap.addEventListener('click', () => {
+        const img = wrap.querySelector('img');
+        if (img) {
+          storyLightboxImg.src = img.src;
+          storyLightboxImg.alt = img.alt;
+          storyLightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+    storyLightbox.addEventListener('click', (e) => {
+      if (e.target === storyLightbox || e.target.closest('.story-lightbox-close')) {
+        storyLightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && storyLightbox.classList.contains('active')) {
+        storyLightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 });
