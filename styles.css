@@ -1084,6 +1084,121 @@ button { font-family: inherit; cursor: pointer; }
 .verified { color: var(--primary); font-weight: 700; }
 .date { color: var(--text-muted); }
 
+/* ===== Customer Stories ===== */
+.customer-stories-section {
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+.story-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary);
+}
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+.story-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.story-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary-light);
+  flex-shrink: 0;
+}
+.story-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.story-meta h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.story-meta span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.story-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(14, 97, 73, 0.08);
+  color: var(--primary);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.story-quote {
+  flex: 1;
+  position: relative;
+  padding: var(--space-md) var(--space-md) var(--space-md) 0;
+  background: linear-gradient(135deg, rgba(14,97,73,0.03), rgba(201,169,110,0.04));
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+.story-quote::before {
+  content: '❝';
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  color: var(--secondary);
+  font-size: 1.8rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+.story-quote p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-style: italic;
+  padding-right: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+.story-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  border-top: 1px dashed var(--border-light);
+  padding-top: var(--space-sm);
+  margin-top: auto;
+}
+.story-verified {
+  color: var(--primary);
+  font-weight: 700;
+}
+.story-date {
+  color: var(--text-muted);
+}
+
 /* ===== Trust ===== */
 .trust-section {
   padding: var(--space-3xl) 0;
@@ -2098,7 +2213,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ----- Responsive New Sections ----- */
 @media (max-width: 1024px) {
-  .pain-grid, .badges-grid { grid-template-columns: repeat(2, 1fr); }
+  .pain-grid, .badges-grid, .stories-grid { grid-template-columns: repeat(2, 1fr); }
   .solution-pillars, .solution-pillars.two-col, .solution-pillars.three-col { grid-template-columns: repeat(2, 1fr); }
   .timeline-grid, .timeline-grid.three-col { grid-template-columns: repeat(2, 1fr); }
   .timeline-cards-row { grid-template-columns: repeat(2, 1fr); }
@@ -2110,7 +2225,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 768px) {
-  .pain-grid, .solution-pillars, .solution-pillars.two-col, .solution-pillars.three-col, .timeline-grid, .timeline-grid.three-col, .badges-grid { grid-template-columns: 1fr; }
+  .pain-grid, .solution-pillars, .solution-pillars.two-col, .solution-pillars.three-col, .timeline-grid, .timeline-grid.three-col, .badges-grid, .stories-grid { grid-template-columns: 1fr; }
   .section-header h2 { font-size: 1.6rem; }
   .timeline-card, .pillar-card, .pain-card, .badge-card { padding: var(--space-xl); }
   .timeline-cards-row {
