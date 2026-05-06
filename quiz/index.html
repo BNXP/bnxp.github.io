@@ -592,6 +592,18 @@ html[dir="ltr"] .sarah-form { text-align: left; }
   padding: 3px 10px;
   border-radius: var(--radius-full);
 }
+.messenger-block .mb-discount {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1.5px solid #f59e0b;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin: 0.75rem 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #92400e;
+  text-align: center;
+  line-height: 1.6;
+}
 
 /* ===== Case Study / Social Proof ===== */
 .case-study {
@@ -886,6 +898,7 @@ body::before {
   .messenger-block .mb-title { font-size: 1.1rem; }
   .messenger-block .mb-sub { font-size: 0.85rem; }
   .messenger-block .mb-btn { padding: 12px 20px; font-size: 0.95rem; width: 100%; justify-content: center; }
+  .messenger-block .mb-discount { font-size: 0.82rem; padding: 8px 10px; }
   .case-study { padding: 1.25rem 1rem; }
   .case-study img { max-width: 100%; }
   .case-study-text { font-size: 0.88rem; }
@@ -976,6 +989,7 @@ function t(key, vars) {
       'quiz_messenger_block_label': 'استشارة مجانية',
       'quiz_messenger_block_title': 'تواصل مع د. سارة مباشرة',
       'quiz_messenger_block_sub': 'سأراجع تشخيصك شخصياً وأُرشدك للخطة الأنسب — بسرية تامة',
+      'quiz_messenger_discount': '💰 اسأل د. سارة عن الخصم الحصري — اكتب لها الآن لمعرفة قيمة الخصم',
       'quiz_messenger_block_btn': '💬 فتح محادثة الماسنجر',
       'quiz_messenger_block_trust1': '🔒 سرية تامة',
       'quiz_messenger_block_trust2': '🌿 طبيعي 100%',
@@ -1804,29 +1818,6 @@ function renderResult(opts = {}) {
     t('quiz_summary_request')
   );
 
-  const sendToSarahHtml = `
-    <div class="send-to-sarah-section">
-      <div class="islamic-frame">
-        <div class="frame-corner tl"></div>
-        <div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div>
-        <div class="frame-corner br"></div>
-        <div class="sarah-section-title">${t('quiz_send_title')}</div>
-        <div class="sarah-section-sub">${t('quiz_send_subtitle')}</div>
-        <form class="sarah-form" id="sarahForm" onsubmit="sendDiagnosisToSarah(event)">
-          <input type="text" name="sendName" placeholder="${t('quiz_send_name_ph')}" required />
-          <input type="tel" name="sendPhone" placeholder="${t('quiz_send_phone_ph')}" required />
-          <button type="submit" class="btn-send">${t('quiz_send_btn')}</button>
-        </form>
-        <div class="sarah-trust-line">
-          <span>${t('quiz_trust_halal')}</span>
-          <span>${t('quiz_trust_natural')}</span>
-          <span>${t('quiz_trust_secret')}</span>
-        </div>
-      </div>
-    </div>
-  `;
-
   // Case study / social proof based on diagnosis
   let caseStudyImg = '';
   let caseStudyText = '';
@@ -1937,12 +1928,11 @@ function renderResult(opts = {}) {
         <div class="trust-badge-item"><span class="tb-icon">☪️</span>حلال</div>
       </div>
 
-      ${sendToSarahHtml}
-
       <div class="messenger-block">
         <div class="mb-label">${t('quiz_messenger_block_label')}</div>
         <div class="mb-title">${t('quiz_messenger_block_title')}</div>
         <div class="mb-sub">${t('quiz_messenger_block_sub')}</div>
+        <div class="mb-discount">${t('quiz_messenger_discount')}</div>
         <a class="mb-btn" href="https://wa.me/971501234567?text=${encodeURIComponent('السلام عليكم د. سارة، أجريت التشخيص المجاني على موقعكم وأرغب في استشارة شخصية.')}" target="_blank" rel="noopener">${t('quiz_messenger_block_btn')}</a>
         <div class="mb-trust">
           <span>${t('quiz_messenger_block_trust1')}</span>
