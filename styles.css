@@ -2248,9 +2248,27 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 768px) {
-  .pain-grid, .solution-pillars, .solution-pillars.two-col, .solution-pillars.three-col, .timeline-grid, .timeline-grid.three-col, .badges-grid, .stories-gallery { grid-template-columns: 1fr; }
+  .pain-grid, .timeline-grid, .timeline-grid.three-col, .badges-grid, .stories-gallery { grid-template-columns: 1fr; }
   .section-header h2 { font-size: 1.6rem; }
   .timeline-card, .pillar-card, .pain-card, .badge-card { padding: var(--space-xl); }
+
+  /* Solution pillars horizontal scroll on mobile */
+  .solution-pillars, .solution-pillars.two-col, .solution-pillars.three-col {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .solution-pillars .pillar-card {
+    flex: 0 0 85%;
+    min-width: 260px;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+
   .timeline-cards-row {
     display: flex; flex-wrap: nowrap; overflow-x: auto;
     gap: var(--space-md); padding-bottom: var(--space-md);
