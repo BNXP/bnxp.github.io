@@ -593,6 +593,66 @@ html[dir="ltr"] .sarah-form { text-align: left; }
   border-radius: var(--radius-full);
 }
 
+/* ===== Case Study / Social Proof ===== */
+.case-study {
+  background: #fff;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: right;
+  position: relative;
+  overflow: hidden;
+}
+html[dir="ltr"] .case-study { text-align: left; }
+.case-study::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+.case-study-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14,97,73,0.06);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(14,97,73,0.1);
+}
+.case-study img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  margin: 0 auto 1rem;
+  display: block;
+  box-shadow: var(--shadow-sm);
+}
+.case-study-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  position: relative;
+  padding: 0 0.5rem;
+}
+.case-study-text::before {
+  content: '❝';
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-size: 2rem;
+  color: var(--secondary);
+  opacity: 0.2;
+  line-height: 1;
+}
+html[dir="ltr"] .case-study-text::before { right: auto; left: -4px; }
+
 /* ===== Premium Arabic Design Upgrades ===== */
 body {
   background: linear-gradient(180deg, #fdfbf6 0%, #f8f4eb 100%);
@@ -826,6 +886,9 @@ body::before {
   .messenger-block .mb-title { font-size: 1.1rem; }
   .messenger-block .mb-sub { font-size: 0.85rem; }
   .messenger-block .mb-btn { padding: 12px 20px; font-size: 0.95rem; width: 100%; justify-content: center; }
+  .case-study { padding: 1.25rem 1rem; }
+  .case-study img { max-width: 100%; }
+  .case-study-text { font-size: 0.88rem; }
   .quiz-header h1 { font-size: 1.1rem; }
   .quiz-header p { font-size: 0.78rem; }
   .quiz-header .back-link { font-size: 0.7rem; padding: 4px 8px; }
@@ -900,6 +963,12 @@ function t(key, vars) {
       'quiz_result_desc': 'الاستشارة مجانية تماماً — والعلاج يبدأ بعد تشخيص دقيق.',
       'quiz_privacy_note': '🔒 كل معلوماتك تبقى سرية تماماً.',
       'quiz_social_proof': '+١٢,٠٠٠ رجل استعاد ثقته بفضل الله من خلال هذا التشخيص',
+      'quiz_case_label': 'قصة نجاح حقيقية من ملفات د. سارة',
+      'quiz_case_alt': 'صورة من محادثة ناجحة مع أحد الزبائن',
+      'quiz_case_pe': 'حالة هذا الأخ كانت تشبه حالتك كثيراً — كان يعاني من سرعة القذف وتحسّن بفضل الله بعد اتباع الخطة التي وضعتها له شخصياً. أنت أيضاً ستشعر بالفرق إذا التزمت بالطريقة الصحيحة.',
+      'quiz_case_ed': 'هذا الزبون جاءني بنفس مشكلتك — ضعف انتصاب كان يؤثر على علاقته الزوجية. وبعد البرنامج المخصص عادت الثقة والاستقرار إلى حياته. أنت التالي إن شاء الله.',
+      'quiz_case_size': 'هذا الأخ كان يشكّك في إمكانية التحسّن مثلك تماماً. لكن بعد 30 يوماً من الالتزام بالبرنامج، رأى فرقاً واضحاً في الحجم والأداء. النتيجة تعتمد على التزامك.',
+      'quiz_case_complex': 'حالة هذا الزبون كانت مركبة — سرعة قذف + ضعف انتصاب. لكن بفضل الله ثم بفضل البرنامج المتكامل، تحسّنت حالته بشكل ملحوظ. حالتك قابلة للعلاج بالتأكيد.',
       'quiz_sarah_personal_title': 'د. سارة جونسون',
       'quiz_sarah_personal_subtitle': 'أخصائية صحة الرجل · نظام جونز هوبكنز · ١٥ سنة خبرة',
       'quiz_sarah_personal_message': 'كل تشخيص أقرأه بنفسي — ليس برنامجاً آلياً. سأحلل إجاباتك وأُعدّ لك خطة علاجية مخصصة تناسب جسمك وظروفك. تواصل معي على الماسنجر والله الموفق.',
@@ -1735,24 +1804,7 @@ function renderResult(opts = {}) {
     t('quiz_summary_request')
   );
 
-  const alreadySubmitted = window.submittedName && window.submittedPhone;
-  const sendToSarahHtml = alreadySubmitted ? `
-    <div class="send-to-sarah-section">
-      <div class="islamic-frame">
-        <div class="frame-corner tl"></div>
-        <div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div>
-        <div class="frame-corner br"></div>
-        <div class="sarah-section-title">${t('quiz_send_success_btn')}</div>
-        <div class="sarah-section-sub">${t('quiz_send_subtitle')}</div>
-        <div class="sarah-trust-line">
-          <span>${t('quiz_trust_halal')}</span>
-          <span>${t('quiz_trust_natural')}</span>
-          <span>${t('quiz_trust_secret')}</span>
-        </div>
-      </div>
-    </div>
-  ` : `
+  const sendToSarahHtml = `
     <div class="send-to-sarah-section">
       <div class="islamic-frame">
         <div class="frame-corner tl"></div>
@@ -1772,6 +1824,30 @@ function renderResult(opts = {}) {
           <span>${t('quiz_trust_secret')}</span>
         </div>
       </div>
+    </div>
+  `;
+
+  // Case study / social proof based on diagnosis
+  let caseStudyImg = '';
+  let caseStudyText = '';
+  if (hasPE && !hasED && !hasSize) {
+    caseStudyImg = '../截图/早泄靠伟哥满足妻子.png';
+    caseStudyText = t('quiz_case_pe');
+  } else if (hasED && !hasPE && !hasSize) {
+    caseStudyImg = '../截图/阳痿朋友介绍来治疗得到效果.png';
+    caseStudyText = t('quiz_case_ed');
+  } else if (hasSize && !hasPE && !hasED) {
+    caseStudyImg = '../截图/增大反馈.png';
+    caseStudyText = t('quiz_case_size');
+  } else {
+    caseStudyImg = '../截图/阳痿早泄改善好.png';
+    caseStudyText = t('quiz_case_complex');
+  }
+  const caseStudyHtml = `
+    <div class="case-study fade-in">
+      <div class="case-study-label">📸 ${t('quiz_case_label')}</div>
+      <img src="${caseStudyImg}" alt="${t('quiz_case_alt')}" loading="lazy" />
+      <div class="case-study-text">${caseStudyText}</div>
     </div>
   `;
 
@@ -1833,8 +1909,10 @@ function renderResult(opts = {}) {
         <p style="margin-top: 0.75rem; font-weight: 600; color: #7f1d1d;">${t('quiz_risks_footer')}</p>
       </div>
 
+      ${caseStudyHtml}
+
       <div class="sarah-personal">
-        <img src="../doctor-photo_copy.jpg" alt="د. سارة" loading="lazy" />
+        <img src="../renshe.33.jpg" alt="د. سارة" loading="lazy" />
         <div class="sp-name">${t('quiz_sarah_personal_title')}</div>
         <div class="sp-title">${t('quiz_sarah_personal_subtitle')}</div>
         <div class="sp-message">"${t('quiz_sarah_personal_message')}"</div>
