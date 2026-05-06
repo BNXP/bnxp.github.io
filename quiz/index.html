@@ -444,6 +444,155 @@ html[dir="ltr"] .sarah-form { text-align: left; }
   border-radius: var(--radius-full);
 }
 
+/* ===== Trust & Conversion Boosters ===== */
+.social-proof-bar {
+  background: linear-gradient(135deg, rgba(14,97,73,0.06), rgba(201,169,110,0.08));
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.social-proof-bar .sp-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+.social-proof-bar .sp-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.sarah-personal {
+  background: #fff;
+  border: 2px solid var(--secondary);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.sarah-personal::before {
+  content: '❝';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 2.5rem;
+  color: var(--secondary);
+  opacity: 0.25;
+  line-height: 1;
+}
+.sarah-personal img {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary);
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.sarah-personal .sp-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.sarah-personal .sp-title {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.sarah-personal .sp-message {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-style: italic;
+  padding: 0 0.5rem;
+}
+
+.trust-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.trust-badge-item .tb-icon { font-size: 1.1rem; }
+
+.messenger-block {
+  background: linear-gradient(135deg, #0084FF, #0066CC);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  color: #fff;
+  margin: 1.5rem 0;
+  box-shadow: 0 8px 24px rgba(0,102,204,0.25);
+}
+.messenger-block .mb-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+.messenger-block .mb-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.messenger-block .mb-sub {
+  font-size: 0.9rem;
+  opacity: 0.92;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.messenger-block .mb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: #0066CC;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.messenger-block .mb-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.messenger-block .mb-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.messenger-block .mb-trust span {
+  font-size: 0.7rem;
+  opacity: 0.85;
+  background: rgba(255,255,255,0.15);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
 /* ===== Premium Arabic Design Upgrades ===== */
 body {
   background: linear-gradient(180deg, #fdfbf6 0%, #f8f4eb 100%);
@@ -665,6 +814,18 @@ body::before {
   .send-fail-banner .send-fail-text strong { font-size: 0.85rem; }
   .send-fail-banner .send-fail-text span { font-size: 0.78rem; }
   .messenger-cta { padding: 14px 20px; font-size: 0.95rem; width: 100%; justify-content: center; }
+  .social-proof-bar { padding: 0.875rem 1rem; }
+  .social-proof-bar .sp-number { font-size: 1.4rem; }
+  .social-proof-bar .sp-text { font-size: 0.82rem; }
+  .sarah-personal { padding: 1.25rem 1rem; }
+  .sarah-personal img { width: 60px; height: 60px; }
+  .sarah-personal .sp-message { font-size: 0.88rem; }
+  .trust-badges-row { gap: 0.5rem; }
+  .trust-badge-item { padding: 6px 10px; font-size: 0.72rem; }
+  .messenger-block { padding: 1.25rem 1rem; }
+  .messenger-block .mb-title { font-size: 1.1rem; }
+  .messenger-block .mb-sub { font-size: 0.85rem; }
+  .messenger-block .mb-btn { padding: 12px 20px; font-size: 0.95rem; width: 100%; justify-content: center; }
   .quiz-header h1 { font-size: 1.1rem; }
   .quiz-header p { font-size: 0.78rem; }
   .quiz-header .back-link { font-size: 0.7rem; padding: 4px 8px; }
@@ -738,6 +899,18 @@ function t(key, vars) {
       'quiz_messenger_cta': '💬 تواصل مع د. سارة على ماسنجر',
       'quiz_result_desc': 'الاستشارة مجانية تماماً — والعلاج يبدأ بعد تشخيص دقيق.',
       'quiz_privacy_note': '🔒 كل معلوماتك تبقى سرية تماماً.',
+      'quiz_social_proof': '+١٢,٠٠٠ رجل استعاد ثقته بفضل الله من خلال هذا التشخيص',
+      'quiz_sarah_personal_title': 'د. سارة جونسون',
+      'quiz_sarah_personal_subtitle': 'أخصائية صحة الرجل · نظام جونز هوبكنز · ١٥ سنة خبرة',
+      'quiz_sarah_personal_message': 'كل تشخيص أقرأه بنفسي — ليس برنامجاً آلياً. سأحلل إجاباتك وأُعدّ لك خطة علاجية مخصصة تناسب جسمك وظروفك. تواصل معي على الماسنجر والله الموفق.',
+      'quiz_trust_badges_title': 'برنامج معتمد دولياً — ثقة تستحقها',
+      'quiz_messenger_block_label': 'استشارة مجانية',
+      'quiz_messenger_block_title': 'تواصل مع د. سارة مباشرة',
+      'quiz_messenger_block_sub': 'سأراجع تشخيصك شخصياً وأُرشدك للخطة الأنسب — بسرية تامة',
+      'quiz_messenger_block_btn': '💬 فتح محادثة الماسنجر',
+      'quiz_messenger_block_trust1': '🔒 سرية تامة',
+      'quiz_messenger_block_trust2': '🌿 طبيعي 100%',
+      'quiz_messenger_block_trust3': '☪️ حلال معتمد',
       'quiz_selector_title': 'بناءً على تشخيصك، اختر الخطة المناسبة لحالتك',
       'quiz_selector_subtitle': 'كل خطة مُصممة خصيصاً — ليست حبوب عامة',
       'quiz_plan_basic_name': 'البرنامج الأساسي',
@@ -1631,6 +1804,11 @@ function renderResult(opts = {}) {
         <div style="font-size: 0.9rem; opacity: 0.95; margin-top: 4px;">${t('quiz_urgency_text')}</div>
       </div>
 
+      <div class="social-proof-bar">
+        <div class="sp-number">+١٢,٠٠٠</div>
+        <div class="sp-text">${t('quiz_social_proof')}</div>
+      </div>
+
       <div class="diagnosis-box">
         <h3>${diagnosisTitle}</h3>
         <p style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">${t('quiz_severity_label')} <span style="color: ${severityColor};">${severity}</span></p>
@@ -1655,6 +1833,13 @@ function renderResult(opts = {}) {
         <p style="margin-top: 0.75rem; font-weight: 600; color: #7f1d1d;">${t('quiz_risks_footer')}</p>
       </div>
 
+      <div class="sarah-personal">
+        <img src="../doctor-photo_copy.jpg" alt="د. سارة" loading="lazy" />
+        <div class="sp-name">${t('quiz_sarah_personal_title')}</div>
+        <div class="sp-title">${t('quiz_sarah_personal_subtitle')}</div>
+        <div class="sp-message">"${t('quiz_sarah_personal_message')}"</div>
+      </div>
+
       <div class="recommendation">
         <h4>${t('quiz_rec_title', { package: recPackage })}</h4>
         <p style="margin-bottom: 1rem;">${t('quiz_rec_intro', { package: recPackage })}</p>
@@ -1667,7 +1852,26 @@ function renderResult(opts = {}) {
 
       ${treatmentSelectorHtml}
 
+      <div class="trust-badges-row">
+        <div class="trust-badge-item"><span class="tb-icon">🛡️</span>FDA</div>
+        <div class="trust-badge-item"><span class="tb-icon">🧪</span>SGS</div>
+        <div class="trust-badge-item"><span class="tb-icon">🏥</span>GMP</div>
+        <div class="trust-badge-item"><span class="tb-icon">☪️</span>حلال</div>
+      </div>
+
       ${sendToSarahHtml}
+
+      <div class="messenger-block">
+        <div class="mb-label">${t('quiz_messenger_block_label')}</div>
+        <div class="mb-title">${t('quiz_messenger_block_title')}</div>
+        <div class="mb-sub">${t('quiz_messenger_block_sub')}</div>
+        <a class="mb-btn" href="https://wa.me/971501234567?text=${encodeURIComponent('السلام عليكم د. سارة، أجريت التشخيص المجاني على موقعكم وأرغب في استشارة شخصية.')}" target="_blank" rel="noopener">${t('quiz_messenger_block_btn')}</a>
+        <div class="mb-trust">
+          <span>${t('quiz_messenger_block_trust1')}</span>
+          <span>${t('quiz_messenger_block_trust2')}</span>
+          <span>${t('quiz_messenger_block_trust3')}</span>
+        </div>
+      </div>
 
       <p class="privacy-note">
         <span>🔒</span> ${t('quiz_privacy_note')}
