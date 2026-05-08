@@ -1,13 +1,13 @@
 /**
  * Internationalization — Browser + IP-based language detection
- * Supported: ar, en, tr, ur  ·  Default: ar
- * RTL: ar, ur
+ * Supported: ar, en  ·  Default: ar
+ * RTL: ar
  */
 
 const LANG_CONFIG = {
-  supported: ['ar', 'en', 'tr', 'ur'],
+  supported: ['ar', 'en'],
   default: 'ar',
-  rtl: ['ar', 'ur'],
+  rtl: ['ar'],
   // Map browser language codes → our supported codes
   browserMap: {
     'ar': 'ar', 'ar-sa': 'ar', 'ar-eg': 'ar', 'ar-iq': 'ar', 'ar-jo': 'ar',
@@ -17,10 +17,7 @@ const LANG_CONFIG = {
     'ar-dj': 'ar', 'ar-km': 'ar', 'ar-ps': 'ar', 'ar-td': 'ar', 'ar-mr': 'ar',
     'en': 'en', 'en-us': 'en', 'en-gb': 'en', 'en-au': 'en', 'en-ca': 'en',
     'en-nz': 'en', 'en-ie': 'en', 'en-in': 'en', 'en-za': 'en', 'en-ng': 'en',
-    'en-ph': 'en', 'en-sg': 'en', 'en-my': 'en', 'tr': 'tr', 'tr-tr': 'tr',
-    'tr-cy': 'tr', 'az': 'tr', 'az-az': 'tr', 'tk': 'tr', 'tk-tm': 'tr',
-    'ur': 'ur', 'ur-pk': 'ur', 'ur-in': 'ur', 'pa': 'ur', 'pa-in': 'ur',
-    'pa-pk': 'ur', 'sd': 'ur', 'sd-pk': 'ur', 'sd-in': 'ur'
+    'en-ph': 'en', 'en-sg': 'en', 'en-my': 'en'
   },
   countryMap: {
     // Arab world → Arabic
@@ -28,10 +25,9 @@ const LANG_CONFIG = {
     EG: 'ar', IQ: 'ar', JO: 'ar', LB: 'ar', SY: 'ar', YE: 'ar',
     SD: 'ar', DZ: 'ar', MA: 'ar', TN: 'ar', LY: 'ar', MR: 'ar',
     PS: 'ar', SO: 'ar', DJ: 'ar', KM: 'ar', TD: 'ar', EH: 'ar',
-    // Turkey & Turkic regions → Turkish
-    TR: 'tr', CY: 'tr', AZ: 'tr', TM: 'tr', UZ: 'tr', KG: 'tr', KZ: 'tr',
-    // Pakistan & Urdu regions → Urdu
-    PK: 'ur', BD: 'ur', AF: 'ur',
+    // Turkey, Turkic, Pakistan & South Asia → English
+    TR: 'en', CY: 'en', AZ: 'en', TM: 'en', UZ: 'en', KG: 'en', KZ: 'en',
+    PK: 'en', BD: 'en', AF: 'en', IN: 'en',
     // English (fallback for Western / other countries)
     US: 'en', GB: 'en', AU: 'en', NZ: 'en', IE: 'en', CA: 'en',
     FR: 'en', DE: 'en', NL: 'en', SE: 'en', NO: 'en', DK: 'en',

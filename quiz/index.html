@@ -1453,12 +1453,12 @@ function submitContactAndShowResult(e) {
 
 function sendQuizReportToTelegram(name, phone) {
   // === Chinese labels mapping ===
-  const condMap = { pe: '早泄', ed: '阳痿', size: '增大', all: '全部问题' };
-  const ageMap = { '18-25': '18-25岁', '26-35': '26-35岁', '36-45': '36-45岁', '46-55': '46-55岁', '55+': '55岁以上' };
-  const healthMap = { diabetes: '糖尿病', prostate: '前列腺问题', pressure: '高血压', depression: '抑郁/焦虑', none: '无' };
-  const habitMap = { daily: '每天或几乎每天', weekly: '每周几次', rarely: '很少', never: '从不' };
-  const lifeMap = { stress: '高压工作/精神压力大', sleep: '睡眠不足', sedentary: '久坐不动/不运动', smoke: '吸烟或饮酒', healthy: '健康生活方式' };
-  const goalMap = { duration: '延长性爱时间(30+分钟)', hardness: '更硬更持久的勃起', size: '增大尺寸和长度', confidence: '恢复自信和男子气概', all: '全面改善所有问题' };
+  const condMap = { pe: 'سرعة القذف', ed: 'ضعف الانتصاب', size: 'صغر الحجم', all: 'جميع المشاكل' };
+  const ageMap = { '18-25': '18-25 سنة', '26-35': '26-35 سنة', '36-45': '36-45 سنة', '46-55': '46-55 سنة', '55+': 'أكثر من 55 سنة' };
+  const healthMap = { diabetes: 'السكري', prostate: 'مشاكل البروستاتا', pressure: 'ارتفاع ضغط الدم', depression: 'الاكتئاب/القلق', none: 'لا شيء' };
+  const habitMap = { daily: 'يومياً أو شبه يومي', weekly: 'بضع مرات أسبوعياً', rarely: 'نادراً', never: 'أبداً' };
+  const lifeMap = { stress: 'ضغط عمل/نفسي عالٍ', sleep: 'قلة النوم', sedentary: 'قلة الحركة/لا رياضة', smoke: 'التدخين أو الكحول', healthy: 'نمط حياة صحي' };
+  const goalMap = { duration: 'زيادة مدة الجماع (30+ دقيقة)', hardness: 'انتصاب أقوى وأكثر صلابة', size: 'زيادة الحجم والطول', confidence: 'استعادة الثقة والرجولة', all: 'تحسين شامل لجميع المشاكل' };
 
   const cond = answers.condition || [];
   const hasPE = cond.includes('pe') || cond.includes('all');
@@ -1490,58 +1490,58 @@ function sendQuizReportToTelegram(name, phone) {
     severityLevel = 3;
   }
 
-  const severityCN = severityLevel >= 3 ? '重度' : severityLevel === 2 ? '中重度' : '轻度';
+  const severityAR = severityLevel >= 3 ? 'حادة' : severityLevel === 2 ? 'متوسطة إلى حادة' : 'خفيفة';
 
   // Determine recommended plan
-  let recPlan = '进阶计划(658迪拉姆)';
+  let recPlan = 'البرنامج المتكامل (658 درهم)';
   if (hasPE && !hasED && !hasSize && health.length === 0 && !habits.includes('daily') && severityLevel <= 1) {
-    recPlan = '基础计划(465迪拉姆)';
+    recPlan = 'البرنامج الأساسي (465 درهم)';
   } else if (hasSize || (hasPE && hasED) || health.length > 0) {
-    recPlan = '综合计划(658迪拉姆)';
+    recPlan = 'البرنامج المتكامل (658 درهم)';
   }
 
   // Symptom detail label
   let symptomLabel = '';
   if (hasPE) {
     const dur = symptom[0] || '';
-    const durMap = { under1: '不到1分钟', '1-3': '1-3分钟', '3-5': '3-5分钟', '5-10': '5-10分钟', over10: '超过10分钟' };
+    const durMap = { under1: 'أقل من دقيقة', '1-3': '1-3 دقائق', '3-5': '3-5 دقائق', '5-10': '5-10 دقائق', over10: 'أكثر من 10 دقائق' };
     symptomLabel = durMap[dur] || dur;
   } else if (hasED) {
     const edState = symptom[0] || '';
-    const edMap = { none: '几乎没有勃起', weak: '勃起软弱，无法完成', unstable: '勃起不稳定，中途变软', morning: '只有晨勃', present: '有勃起但不如预期' };
+    const edMap = { none: 'لا يحدث انتصاب تقريباً', weak: 'انتصاب ضعيف — لا يكمل العلاقة', unstable: 'انتصاب متقطع — يضعف أثناء الجماع', morning: 'انتصاب صباحي فقط', present: 'الانتصاب موجود لكن ليس كما أتمناه' };
     symptomLabel = edMap[edState] || edState;
   } else if (hasSize) {
     const sz = symptom[0] || '';
-    const szMap = { under1: '小于4英寸(10cm)', '1-3': '4-5英寸(10-13cm)', '3-5': '5-6英寸(13-15cm)', '5-10': '6-7英寸(15-18cm)', over10: '大于7英寸(18cm+)' };
+    const szMap = { under1: 'أقل من 4 بوصات (10 سم)', '1-3': '4-5 بوصات (10-13 سم)', '3-5': '5-6 بوصات (13-15 سم)', '5-10': '6-7 بوصات (15-18 سم)', over10: 'أكثر من 7 بوصات (18 سم+)' };
     symptomLabel = szMap[sz] || sz;
   }
 
-  const condLabels = cond.map(c => condMap[c] || c).filter(c => c !== '全部问题').join('、') || '全部问题';
-  const healthLabels = health.map(h => healthMap[h] || h).join('、') || '无';
-  const lifeLabels = lifestyle.map(l => lifeMap[l] || l).join('、') || '无';
-  const goalLabels = goal.map(g => goalMap[g] || g).join('、') || '未选择';
-  const habitLabel = habitMap[habits[0]] || habits[0] || '未选择';
+  const condLabels = cond.map(c => condMap[c] || c).filter(c => c !== 'جميع المشاكل').join('، ') || 'جميع المشاكل';
+  const healthLabels = health.map(h => healthMap[h] || h).join('، ') || 'لا شيء';
+  const lifeLabels = lifestyle.map(l => lifeMap[l] || l).join('، ') || 'لا شيء';
+  const goalLabels = goal.map(g => goalMap[g] || g).join('، ') || 'لم يُختَر';
+  const habitLabel = habitMap[habits[0]] || habits[0] || 'لم يُختَر';
 
-  const text = `📋 <b>新的诊断报告</b>\n` +
+  const text = `📋 <b>تقرير التشخيص</b>\n` +
     `━━━━━━━━━━━━━━━━━━━━\n` +
-    `👤 <b>客户信息</b>\n` +
-    `• Messenger名字: ${name}\n` +
-    `• WhatsApp: ${phone}\n\n` +
-    `📌 <b>诊断结果</b>\n` +
-    `• 主要问题: ${condLabels}\n` +
-    `• 严重程度: ${severityCN}\n` +
-    `• 具体表现: ${symptomLabel || '—'}\n` +
-    `• 年龄: ${ageMap[ageVal] || ageVal}\n\n` +
-    `📋 <b>客户详细回答</b>\n` +
-    `• 健康状况: ${healthLabels}\n` +
-    `• 自慰频率: ${habitLabel}\n` +
-    `• 生活方式: ${lifeLabels}\n` +
-    `• 治疗目标: ${goalLabels}\n\n` +
-    `🎯 <b>系统推荐方案</b>\n` +
-    `• 推荐计划: ${recPlan}\n` +
-    `• 计划时长: 30天\n` +
-    `• 跟进方式: 每天WhatsApp个人跟踪\n\n` +
-    `⏰ 提交时间: ${new Date().toLocaleString('zh-CN')}`;
+    `👤 <b>بيانات العميل</b>\n` +
+    `• اسم الماسنجر: ${name}\n` +
+    `• واتساب: ${phone}\n\n` +
+    `📌 <b>نتيجة التشخيص</b>\n` +
+    `• المشكلة الرئيسية: ${condLabels}\n` +
+    `• درجة الخطورة: ${severityAR}\n` +
+    `• التفاصيل: ${symptomLabel || '—'}\n` +
+    `• العمر: ${ageMap[ageVal] || ageVal}\n\n` +
+    `📋 <b>إجابات التفصيلية</b>\n` +
+    `• الحالة الصحية: ${healthLabels}\n` +
+    `• تكرار الاستمناء: ${habitLabel}\n` +
+    `• نمط الحياة: ${lifeLabels}\n` +
+    `• الهدف العلاجي: ${goalLabels}\n\n` +
+    `🎯 <b>الخطة المُوصى بها</b>\n` +
+    `• الخطة: ${recPlan}\n` +
+    `• المدة: 30 يوماً\n` +
+    `• المتابعة: يومياً عبر واتساب\n\n` +
+    `⏰ وقت الإرسال: ${new Date().toLocaleString('ar-SA')}`;
 
   const TELEGRAM_BOT_TOKEN = '8774208676:AAF4fmYVHXTK3lLIIggBqNBi6FI4pVkTnuI';
   const TELEGRAM_CHAT_ID   = '8758562396';
