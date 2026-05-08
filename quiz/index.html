@@ -1522,26 +1522,26 @@ function sendQuizReportToTelegram(name, phone) {
   const goalLabels = goal.map(g => goalMap[g] || g).join('، ') || 'لم يُختَر';
   const habitLabel = habitMap[habits[0]] || habits[0] || 'لم يُختَر';
 
-  const text = `📋 <b>تقرير التشخيص</b>\n` +
+  const text = `📋 <b>新的诊断报告</b>\n` +
     `━━━━━━━━━━━━━━━━━━━━\n` +
-    `👤 <b>بيانات العميل</b>\n` +
-    `• اسم الماسنجر: ${name}\n` +
-    `• واتساب: ${phone}\n\n` +
-    `📌 <b>نتيجة التشخيص</b>\n` +
-    `• المشكلة الرئيسية: ${condLabels}\n` +
-    `• درجة الخطورة: ${severityAR}\n` +
-    `• التفاصيل: ${symptomLabel || '—'}\n` +
-    `• العمر: ${ageMap[ageVal] || ageVal}\n\n` +
-    `📋 <b>إجابات التفصيلية</b>\n` +
-    `• الحالة الصحية: ${healthLabels}\n` +
-    `• تكرار الاستمناء: ${habitLabel}\n` +
-    `• نمط الحياة: ${lifeLabels}\n` +
-    `• الهدف العلاجي: ${goalLabels}\n\n` +
-    `🎯 <b>الخطة المُوصى بها</b>\n` +
-    `• الخطة: ${recPlan}\n` +
-    `• المدة: 30 يوماً\n` +
-    `• المتابعة: يومياً عبر واتساب\n\n` +
-    `⏰ وقت الإرسال: ${new Date().toLocaleString('ar-SA')}`;
+    `👤 <b>客户信息</b>\n` +
+    `• Messenger名字: ${name}\n` +
+    `• WhatsApp: ${phone}\n\n` +
+    `📌 <b>诊断结果</b>\n` +
+    `• 主要问题: ${condLabels}\n` +
+    `• 严重程度: ${severityAR}\n` +
+    `• 具体表现: ${symptomLabel || '—'}\n` +
+    `• 年龄: ${ageMap[ageVal] || ageVal}\n\n` +
+    `📋 <b>客户详细回答</b>\n` +
+    `• 健康状况: ${healthLabels}\n` +
+    `• 自慰频率: ${habitLabel}\n` +
+    `• 生活方式: ${lifeLabels}\n` +
+    `• 治疗目标: ${goalLabels}\n\n` +
+    `🎯 <b>系统推荐方案</b>\n` +
+    `• 推荐计划: ${recPlan}\n` +
+    `• 计划时长: 30天\n` +
+    `• 跟进方式: 每天WhatsApp个人跟踪\n\n` +
+    `⏰ 提交时间: ${new Date().toLocaleString('zh-CN')}`;
 
   const TELEGRAM_BOT_TOKEN = '8774208676:AAF4fmYVHXTK3lLIIggBqNBi6FI4pVkTnuI';
   const TELEGRAM_CHAT_ID   = '8758562396';
