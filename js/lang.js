@@ -199,13 +199,13 @@ async function setLanguage(lang, isUserAction = false) {
 }
 
 function detectBrowserLanguage() {
-  // navigator.languages: ['tr-TR', 'tr', 'en-US', 'en']
+  // navigator.languages: ['ar-SA', 'ar', 'en-US', 'en']
   const langs = navigator.languages || [navigator.language || 'ar'];
   for (const raw of langs) {
     const code = raw.toLowerCase().trim();
     // Try exact match first
     if (LANG_CONFIG.browserMap[code]) return LANG_CONFIG.browserMap[code];
-    // Try base language (e.g. 'tr-TR' → 'tr')
+    // Try base language (e.g. 'en-US' → 'en')
     const base = code.split('-')[0];
     if (LANG_CONFIG.browserMap[base]) return LANG_CONFIG.browserMap[base];
   }

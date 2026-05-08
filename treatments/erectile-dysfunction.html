@@ -11,7 +11,7 @@
       const saved = localStorage.getItem('site-lang');
       if (saved) {
         document.documentElement.setAttribute('lang', saved);
-        document.documentElement.setAttribute('dir', (saved === 'ar' || saved === 'ur') ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('dir', (saved === 'ar') ? 'rtl' : 'ltr');
       }
     } catch(e) {}
   })();
